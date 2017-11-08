@@ -9,39 +9,44 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link href="css/bootstrap.min.css" rel="stylesheet">
 	<link href="css/bootstrap-theme.min.css" rel="stylesheet">
+	<link href="css/family2.css" rel="stylesheet">
 </head>
 
 <body>
 	<script id="list-template" type="text/x-handlebars-template">
-		<div id="person{{index}}">
+		<div id="person{{index}}" class="panel">
 			<div id="name{{index}}">
-				<h3>{{name}}</h3>
+				<h3 class="name">{{name}}</h3>
 			</div>
 
 			<div id="list{{index}}">
 
 				<div id="content{{index}}">
 					{{#each entry}}
-					<p id="p{{@root.index}}{{@index}}"><button id="rm{{@root.index}}{{@index}}">&times</button> {{this}}</p>
+					<p id="p{{@root.index}}{{@index}}" class="card"><button id="rm{{@root.index}}{{@index}}" class="remove-btn">&times</button> {{this}}</p>
 					{{/each}}
 				</div>
 
-				<div id="button{{index}}">
-					<button id="add{{index}}">Add Entry</button>
-					<button id="cancel{{index}}">Cancel</button>
+				<div>
+					<button id="add{{index}}" class="btn btn-primary horizontal-btn">Add Entry</button>
+				</div>
+				<div>
+					<button id="cancel{{index}}" class="btn btn-primary horizontal-btn">Cancel</button>
 				</div>
 
-				<input type="text" id="input{{index}}"></input>
+				<div>
+					<input type="text" id="input{{index}}" class="horizontal-input"></input>
+				</div>
 			</div>
 		</div>
 	</script>
 
 	<div class="container">
 		<div class="row">
-			<div class="col-xs-3"></div>
-			<div id="family-list" class="col-xs-6">
+			<div class="col-xs-2"></div>
+			<div id="family-list" class="col-xs-8">
 			</div>
-			<div class="col-xs-3"></div>
+			<div class="col-xs-2"></div>
 		</div>
 	</div>
 

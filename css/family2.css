@@ -1,0 +1,45 @@
+.container {
+	background-color: #AFEEEE;
+}
+
+.panel {
+	background-color: #a7e5e5;
+	padding-left: 5%;
+	padding-right: 5%;
+	padding-bottom: 20px;
+	border-width: 1px;
+	border-color: black;
+	border-style: solid;
+	border-radius: 5px;
+}
+
+.name {
+	padding: 20px;
+	text-align: center;
+	border-width: 1px;
+	border-color: black;
+	border-style: solid;
+	border-radius: 5px;
+}
+
+.card {
+	padding: 5px;
+	border-width: 1px;
+	border-color: black;
+	border-style: solid;
+	border-radius: 5px;
+}
+
+.remove-btn {
+	border-radius: 100%;
+}
+
+.horizontal-btn {
+	width: 100%;
+	margin-bottom: 5px;
+}
+
+.horizontal-input {
+	padding: 5px;
+	width: 100%;
+}
