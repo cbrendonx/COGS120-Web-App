@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+
+<!-- <script src="js/auth.js"></script> -->
+
+<html>
+<head>
+	<title>Login</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+	<link href="css/bootstrap-theme.min.css" rel="stylesheet">
+</head>
+
+<body>
+	<script id="list-template" type="text/x-handlebars-template">
+		<div id="person{{index}}">
+			<div id="name{{index}}">
+				<h3>{{name}}</h3>
+			</div>
+
+			<div id="list{{index}}">
+
+				<div id="content{{index}}">
+					{{#each item}}
+					<p id="p{{@root.index}}{{@index}}"><button id="rm{{@root.index}}{{@index}}">&times</button> {{this}}</p>
+					{{/each}}
+				</div>
+
+				<div id="button{{index}}">
+					<button id="add{{index}}">Add Item</button>
+					<button id="cancel{{index}}">Cancel</button>
+				</div>
+
+				<input type="text" id="input{{index}}"></input>
+			</div>
+		</div>
+	</script>
+
+	<div class="container">
+		<div class="row">
+			<div class="col-xs-3"></div>
+			<div id="family-list" class="col-xs-6">
+			</div>
+			<div class="col-xs-3"></div>
+		</div>
+	</div>
+
+	<script src="https://code.jquery.com/jquery.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/handlebars-v4.0.11.js"></script>
+	<script src="js/family2.js"></script>
+</body>
+</html>
