@@ -1,9 +1,9 @@
 var family = [
-	{"name": "Brendon", "item": ["Milk", "Water", "Juice"], "index": 0},
-	{"name": "Brendon", "item": ["Milk", "Water", "Juice"], "index": 1},
-	{"name": "Brendon", "item": ["Milk", "Water", "Juice"], "index": 2},
-	{"name": "Brendon", "item": ["Milk", "Water", "Juice"], "index": 3},
-	{"name": "Brendon", "item": ["Milk", "Water", "Juice"], "index": 4},
+	{"name": "Brendon", "entry": ["Milk", "Water", "Juice"], "index": 0},
+	{"name": "Brendon", "entry": ["Milk", "Water", "Juice"], "index": 1},
+	{"name": "Brendon", "entry": ["Milk", "Water", "Juice"], "index": 2},
+	{"name": "Brendon", "entry": ["Milk", "Water", "Juice"], "index": 3},
+	{"name": "Brendon", "entry": ["Milk", "Water", "Juice"], "index": 4},
 ];
 
 $(document).ready(function() {
@@ -82,9 +82,18 @@ $(document).ready(function() {
 	    	if (text === "") {
 				alert("Please enter something valid");
 	    	}
+
 	    	else {
 		    	content.append("<p id='p" + index + subIndex + "''><button id='rm" + index + subIndex + "''>&times</button> " + text + "</p>");
+
+                // Clears the input field.
 		    	$("#input" + index).val("");
+
+                // Attaches a click handler to the remove button.
+                $("#rm" + index + subIndex).click(function() {
+                    console.log(this);
+                    $(this).parent().remove();
+                });
 		    }
     	}
     });

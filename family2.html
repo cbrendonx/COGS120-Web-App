@@ -4,7 +4,7 @@
 
 <html>
 <head>
-	<title>Login</title>
+	<title>family2</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link href="css/bootstrap.min.css" rel="stylesheet">
@@ -21,13 +21,13 @@
 			<div id="list{{index}}">
 
 				<div id="content{{index}}">
-					{{#each item}}
+					{{#each entry}}
 					<p id="p{{@root.index}}{{@index}}"><button id="rm{{@root.index}}{{@index}}">&times</button> {{this}}</p>
 					{{/each}}
 				</div>
 
 				<div id="button{{index}}">
-					<button id="add{{index}}">Add Item</button>
+					<button id="add{{index}}">Add Entry</button>
 					<button id="cancel{{index}}">Cancel</button>
 				</div>
 
