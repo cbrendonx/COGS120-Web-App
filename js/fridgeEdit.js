@@ -29,6 +29,9 @@ $(document).ready(function() {
 			return;
 		}
 
+		// Clears the input field.
+		$("#item").val("");
+
 		console.log(toAdd);
 
 		// Adds to the fridge.
