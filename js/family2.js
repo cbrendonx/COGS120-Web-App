@@ -1,18 +1,16 @@
 // Global family array
-var family = [
-	{"name": "Brendon", "entry": ["Milk", "Water", "Juice"], "index": 0},
-	{"name": "Brendon", "entry": ["Milk", "Water", "Juice"], "index": 1},
-	{"name": "Brendon", "entry": ["Milk", "Water", "Juice"], "index": 2},
-	{"name": "Brendon", "entry": ["Milk", "Water", "Juice"], "index": 3},
-	{"name": "Brendon", "entry": ["Milk", "Water", "Juice"], "index": 4},
-];
+var family = [];
 
+// Gets called when the document is ready.
 $(document).ready(function() {
 
+	// Retrieves the family from localStorage.
 	retrieveFamily();
 
+	// Displays the family list.
 	displayList();
 
+	// Assigns functionality to the add new family member button.
 	$("#new-name-btn").click(function() {
 
 		var name = document.getElementById("new-name").value;
@@ -39,6 +37,7 @@ $(document).ready(function() {
 	});
 });
 
+// Helper function that retrieves the family from localStorage.
 function retrieveFamily() {
 
 	// Retrieves the family from localStorage.
@@ -54,6 +53,7 @@ function retrieveFamily() {
 	}
 }
 
+// Helper function that saves the family to localStorage.
 function saveFamily() {
 
 	console.log("Saving family to localStorage");
@@ -61,6 +61,7 @@ function saveFamily() {
 	localStorage.setItem("family", JSON.stringify(family));
 }
 
+// Helper function that displays the family list.
 function displayList() {
 
 	// compile the template
@@ -76,10 +77,12 @@ function displayList() {
 		var curHtml = template(curData);
 		parentDiv.append(curHtml);
 
+		// Hides all of the information associated with a name.
 		$("#list" + i).hide();
 		$("#input" + i).hide();
 		$("#cancel" + i).hide();
 
+		// Assigns functionality to the name.
 		$("#name" + i).click(function() {
 			var id = this.getAttribute("id");
 			var index = id.substr(4);
@@ -87,10 +90,12 @@ function displayList() {
 			var input = $("#input" + index);
 			var cancel = $("#cancel" + index);
 
+			// Expands the list if it is hidden.
 			if (!list.is(":visible")) {
 				list.show(500);
 			}
 
+			// Otherwise hides everything.
 			else {
 				list.hide(500);
 				input.hide(500);
@@ -98,6 +103,7 @@ function displayList() {
 			}
 		});
 
+		// Assigns functionality to the disown button.
 		$("#disown" + i).click(function() {
 			if (confirm("Are you sure you want to disown this family member?")) {
 				$(this).parent().hide(500, function() {
@@ -106,13 +112,14 @@ function displayList() {
 					family.splice(index, 1);
 					reindex(family);
 					displayList();
-				});
 
-				// Saves changes to the "database".
-				saveFamily();
+					// Saves changes to the "database".
+					saveFamily();
+				});
 			}
 		});
 
+		// Assigns functionality to the add button.
 		$("#add" + i).click(function() {
 			var id = this.getAttribute("id");
 			var index = id.substr(3);
@@ -152,6 +159,7 @@ function displayList() {
 			}
 		});
 
+		// Assigns functionality to the cancel button.
 		$("#cancel" + i).click(function() {
 			var id = this.getAttribute("id");
 			var index = id.substr(6);
@@ -164,6 +172,7 @@ function displayList() {
 			}
 		});
 
+		// Enables enter-submission in the text input.
 		$("#input" + i).keypress(function(event) {
 			if (event.which == 13) {
 				console.log("Enter");
@@ -195,6 +204,7 @@ function displayList() {
 			}
 		});
 
+		// Assigns functionality to the remove buttons for each item.
 		var content = $("#content" + i + " p");
 		for (var j = 0; j < content.length; j++) {
 			$("#rm" + i + j).click(removeHandler);
@@ -220,6 +230,7 @@ function displayContent(index) {
 	}
 }
 
+// Helper function that removes an item.
 function removeHandler() {
 
 	console.log(this);
@@ -247,6 +258,7 @@ function removeHandler() {
 	}
 }
 
+// Helper function that reindexes the family array.
 function reindex(array) {
 	for (var i = 0; i < array.length; i++) {
 		array[i]["index"] = i;
