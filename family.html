@@ -24,9 +24,49 @@
 			<a href="index.html"><button class = "changeButtons" id = "backButton">&larr; Back</button></a>
 		    <button class = "changeButtons" id = "removeButton">Remove List</button>
 	    </div>
-		<div class = "famList">
-			<!--This is where the start of panel begins.-->
-			<div class="panelDefault" id = "list1">
+		
+		
+			<!--Start of next panel-->
+	<script id="listTemplate" type="text/x-handlebars-template">
+		<div class="panelDefault" id = "list{{index}}">
+			<div class = "listTitle" id = "title{{index}}">
+				<h4>{{listName}}</h4>
+				<div class = "arrowDown" id = "arrow{{index}}">
+					<div class = "bar1"></div>
+					<div class = "bar2"></div>
+				</div>
+			</div>
+			<div class = "actualList" id = "actualList{{index}}">
+				{{#each itemList}}
+					<p class = "item" id = "i{{@root.index}}{{@index}}">
+						<button class = "removeItem" id = "removeButton{{@root.index}}{{@index}}">&times</button> {{this}}
+					</p>
+				{{/each}}
+			</div>
+			<div class = "listFooter" id = "listFooter{{index}}">
+				<button class = "moreButtons" id = "addItem{{index}}">+ Add Item</button>
+				<button class = "moreButtons" id = "cancelButton{{index}}">Cancel Add</button>
+				<div class = "form" id = "descriptForm{{index}}">
+					<form>
+					  <p>Item Description:</p>
+						<input type="text" class = "inputText" id = "textInput{{index}}">
+					</form>
+				</div>
+			</div>
+		</div>
+	</script>
+
+			<!--End of next panel-->
+		
+	<div class = "famList">
+		<!-- The template goes here.-->
+	</div>
+		
+	<!--Button to Add a List-->
+	<div class="panelDefault" id = "addList">
+		<h4 class = "listTitle" id = "addTitle">+ Add List</h4>
+	</div>
+			<!--<div class="panelDefault" id = "list1">
 				<a data-toggle="collapse" href="#collapse1">
 					<div class = "listTitle" id = "title1">
 						<h4>My Personal List</h4>
@@ -35,7 +75,7 @@
 							<div class = "bar2"></div>
 						</div>
 					</div>
-				</a><!--Delete this.-->
+				</a>
 				<div id="collapse1" class="panel-collapse collapse">
 					<div class="panel-body" id="panel-body1">
 						<div id = "actualList1">
@@ -67,60 +107,8 @@
 						</div>
 					</div>
 				</div>
-			</div>
+			</div>-->
 			<!--This is where the end of panel arrives.-->
-		
-			<!--Start of next panel-->
-		<script id="list-template" type="text/x-handlebars-template">
-		<div class="panelDefault" id = "list{{index}}">
-				<a data-toggle="collapse" href="#collapse{{index}}">
-					<div class = "listTitle" id = "title1">
-						<h4>My Personal List</h4>
-						<div class = "arrowDown" id = "arrow{index}">
-							<div class = "bar1"></div>
-							<div class = "bar2"></div>
-						</div>
-					</div>
-				<div id="collapse{{index}}" class="panel-collapse collapse">
-					<div class="panel-body" id="panel-body1{{index}}">
-						<div id = "actualList{{index}}">
-							<p class = "item" id = "i11">
-								<button class = "removeItem" id = "removeButton11">&times</button>
-								PanelBody1
-							</p>
-							<p class = "item" id = "i12">
-								<button class = "removeItem" id = "removeButton12">&times</button>
-								PanelBody2
-							</p>
-							<p class = "item" id = "i13">
-								<button class = "removeItem" id = "removeButton13">&times</button>
-								PanelBody3
-							</p>
-						</div>
-					</div>
-					<div class = "listFooter1">
-						<button class = "addItem" id = "addItem1">+ Add Item</button>
-						<button class = "addItem" id = "cancelButton1">Cancel Add</button>
-							
-					</div>
-					<div class = "listFooter2">
-						<div class = "form" id = "descriptForm">
-							<form>
-							  <p>Item Description:</p>
-							  <input type="text" id = "textInput1"></input>
-					  		</form>
-						</div>
-					</div>
-				</div>
-			</div>
-			<!--End of next panel-->
-			
-		<!--Button to Add a List-->
-		<div class="panelDefault" id = "addList">
-			<h4 class = "listTitle" id = "addTitle">+ Add List</h4>
-		</div>
-			
-	</div>
 		
 	</body>
 	
@@ -130,4 +118,5 @@
 	<script src="js/bootstrap.js"></script>
 	<script src="js/bootstrap.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script src="js/handlebars-v4.0.11.js"></script>
 </html>
