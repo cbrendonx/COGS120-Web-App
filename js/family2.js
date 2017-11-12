@@ -1,9 +1,9 @@
 var family = [
 	{"name": "Brendon", "entry": ["Milk", "Water", "Juice"], "index": 0},
-	{"name": "Brendon", "entry": ["Milk", "Water", "Juice"], "index": 1}/*,
+	{"name": "Brendon", "entry": ["Milk", "Water", "Juice"], "index": 1},
 	{"name": "Brendon", "entry": ["Milk", "Water", "Juice"], "index": 2},
 	{"name": "Brendon", "entry": ["Milk", "Water", "Juice"], "index": 3},
-	{"name": "Brendon", "entry": ["Milk", "Water", "Juice"], "index": 4},*/
+	{"name": "Brendon", "entry": ["Milk", "Water", "Juice"], "index": 4},
 ];
 
 $(document).ready(function() {
