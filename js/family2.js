@@ -7,7 +7,30 @@ var family = [
 ];
 
 $(document).ready(function() {
+
 	displayList();
+
+	$("#new-name-btn").click(function() {
+
+		var name = document.getElementById("new-name").value;
+		var index = family.length;
+
+		// Removes leading and trailing whitespaces.
+		name = name.trim();
+
+		// Clears the input field.
+		$("#new-name").val("");
+
+		if (name === "") {
+			alert("Please enter something valid");
+		}
+
+		else {
+			family.push({"name": name, "entry": [], "index": index})
+			console.log(family);
+			displayList();
+		}
+	});
 });
 
 function displayList() {
@@ -17,6 +40,7 @@ function displayList() {
 	var template = Handlebars.compile(source);
 
 	var parentDiv = $("#family-list");
+	parentDiv.html("");
 
 	// now iterate through the complexData list and keep appending:
 	for (var i = 0; i < family.length; i++) {
@@ -52,8 +76,6 @@ function displayList() {
 				var index = person.substr(6);
 				family.splice(index, 1);
 				reindex(family);
-				$(this).parent().html("");
-
 				displayList();
 			});
 		});
