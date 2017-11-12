@@ -1,9 +1,9 @@
 var family = [
 	{"name": "Brendon", "entry": ["Milk", "Water", "Juice"], "index": 0},
-	{"name": "Brendon", "entry": ["Milk", "Water", "Juice"], "index": 1},
+	{"name": "Brendon", "entry": ["Milk", "Water", "Juice"], "index": 1}/*,
 	{"name": "Brendon", "entry": ["Milk", "Water", "Juice"], "index": 2},
 	{"name": "Brendon", "entry": ["Milk", "Water", "Juice"], "index": 3},
-	{"name": "Brendon", "entry": ["Milk", "Water", "Juice"], "index": 4},
+	{"name": "Brendon", "entry": ["Milk", "Water", "Juice"], "index": 4},*/
 ];
 
 $(document).ready(function() {
@@ -61,7 +61,31 @@ $(document).ready(function() {
     	if (!input.is(":visible")) {
 	    	input.show(500);
 	    	cancel.show(500);
-    	}
+    	} else if (input.is(":visible")) {
+	    	console.log("Enter!");
+	    	var id = this.getAttribute("id");
+	    	var index = id.substr(3);
+	    	console.log(index);
+	    	// var content = $("#content" + index);
+	    	// var subIndex = $("#content" + index + " p").length;
+
+	    	console.log(document.getElementById("input" + index));
+	    	var text = document.getElementById("input" + index).value;
+
+	    	text = text.trim();
+
+	    	if (text === "") {
+				alert("Please enter something valid");
+	    	}
+
+	    	else {
+                family[index]["entry"].push(text);
+                displayContent(index);
+
+                // Clears the input field.
+		    	$("#input" + index).val("");
+		    }
+		} else {}
     });
 
     $("#cancel" + i).click(function() {
@@ -123,6 +147,7 @@ function displayContent(index) {
 
         // Attaches a click handler to the remove button.
         $("#rm" + index + i).click(removeHandler);
+			
     }
 }
 
@@ -130,21 +155,28 @@ function removeHandler() {
 
     console.log(this);
 
-    // Captures the id of the content div.
-    var id = $(this).parent().parent().attr("id");
-    console.log(id);
+    if (confirm("Are you sure you want to delete the item(s)")) {
+    
+        // Captures the id of the content div.
+        var id = $(this).parent().parent().attr("id");
+        console.log(id);
 
-    // Calculates the indicies.
-    var index = id.substr("content".length);
-    var subIndex = $(this).attr("id").substr(("rm" + index).length);
-    console.log(index);
-    console.log(subIndex);
+        // Calculates the indicies.
+        var index = id.substr("content".length);
+        var subIndex = $(this).attr("id").substr(("rm" + index).length);
+        console.log(index);
+        console.log(subIndex);
 
-    // Removes the entry from the entry array.
-    family[index]["entry"].splice(subIndex, 1);
+        // Removes the entry from the entry array.
+        family[index]["entry"].splice(subIndex, 1);
 
-    // Clears the div and repopulates.
-    displayContent(index);
+        // Clears the div and repopulates.
+        displayContent(index);
+    }
+
+    else {
+        // Does nothing.
+    }
 }
 
 function reindex(array) {
