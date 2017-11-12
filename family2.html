@@ -16,7 +16,10 @@
 	<script id="list-template" type="text/x-handlebars-template">
 		<div id="person{{index}}" class="panel">
 			<div id="name{{index}}">
-				<h3 class="name">{{name}}</h3>
+				<h3 class="name">{{name}} {{index}}</h3>
+			</div>
+			<div id="disown{{index}}">
+				<p class="name">Remove</p>
 			</div>
 
 			<div id="list{{index}}">

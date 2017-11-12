@@ -42,6 +42,16 @@ $(document).ready(function() {
 	    }
     });
 
+    $("#disown" + i).click(function() {
+        $(this).parent().hide(1000, function() {
+            var person = $(this).attr("id");
+            var index = person.substr(6);
+            family.splice(index, 1);
+            reindex(family);
+            $(this).remove();
+        });
+    });
+
     $("#add" + i).click(function() {
     	var id = this.getAttribute("id");
     	var index = id.substr(3);
@@ -135,4 +145,10 @@ function removeHandler() {
 
     // Clears the div and repopulates.
     displayContent(index);
+}
+
+function reindex(array) {
+    for (var i = 0; i < array.length; i++) {
+        array[i]["index"] = i;
+    }
 }
