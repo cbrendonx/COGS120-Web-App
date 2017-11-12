@@ -1,3 +1,4 @@
+// Global family array
 var family = [
 	{"name": "Brendon", "entry": ["Milk", "Water", "Juice"], "index": 0},
 	{"name": "Brendon", "entry": ["Milk", "Water", "Juice"], "index": 1},
@@ -7,6 +8,8 @@ var family = [
 ];
 
 $(document).ready(function() {
+
+	retrieveFamily();
 
 	displayList();
 
@@ -29,9 +32,34 @@ $(document).ready(function() {
 			family.push({"name": name, "entry": [], "index": index})
 			console.log(family);
 			displayList();
+
+			// Saves changes to the "database".
+			saveFamily();
 		}
 	});
 });
+
+function retrieveFamily() {
+
+	// Retrieves the family from localStorage.
+	var localFamily = localStorage.getItem("family");
+
+	// If there are members, parses the members retrieved.
+	if (localFamily && localFamily!= "[]") {
+		console.log("There are members in the family");
+		family = JSON.parse(localFamily);
+	}
+	else {
+		console.log("There are no members in the family");
+	}
+}
+
+function saveFamily() {
+
+	console.log("Saving family to localStorage");
+	
+	localStorage.setItem("family", JSON.stringify(family));
+}
 
 function displayList() {
 
@@ -71,13 +99,18 @@ function displayList() {
 		});
 
 		$("#disown" + i).click(function() {
-			$(this).parent().hide(1000, function() {
-				var person = $(this).attr("id");
-				var index = person.substr(6);
-				family.splice(index, 1);
-				reindex(family);
-				displayList();
-			});
+			if (confirm("Are you sure you want to disown this family member?")) {
+				$(this).parent().hide(500, function() {
+					var person = $(this).attr("id");
+					var index = person.substr(6);
+					family.splice(index, 1);
+					reindex(family);
+					displayList();
+				});
+
+				// Saves changes to the "database".
+				saveFamily();
+			}
 		});
 
 		$("#add" + i).click(function() {
@@ -90,7 +123,7 @@ function displayList() {
 				input.show(500);
 				cancel.show(500);
 			} else if (input.is(":visible")) {
-				console.log("Enter!");
+				console.log("Enter");
 				var id = this.getAttribute("id");
 				var index = id.substr(3);
 				console.log(index);
@@ -112,6 +145,9 @@ function displayList() {
 
 					// Clears the input field.
 					$("#input" + index).val("");
+
+					// Saves changes to the "database".
+					saveFamily();
 				}
 			}
 		});
@@ -130,7 +166,7 @@ function displayList() {
 
 		$("#input" + i).keypress(function(event) {
 			if (event.which == 13) {
-				console.log("Enter!");
+				console.log("Enter");
 				var id = this.getAttribute("id");
 				var index = id.substr(5);
 				console.log(index);
@@ -152,6 +188,9 @@ function displayList() {
 
 					// Clears the input field.
 					$("#input" + index).val("");
+
+					// Saves changes to the "database".
+					saveFamily();
 				}
 			}
 		});
@@ -185,7 +224,7 @@ function removeHandler() {
 
 	console.log(this);
 
-	if (confirm("Are you sure you want to delete the item(s)")) {
+	if (confirm("Are you sure you want to delete the item?")) {
 	
 		// Captures the id of the content div.
 		var id = $(this).parent().parent().attr("id");
@@ -202,6 +241,9 @@ function removeHandler() {
 
 		// Clears the div and repopulates.
 		displayContent(index);
+
+		// Saves changes to the "database".
+		saveFamily();
 	}
 }
 

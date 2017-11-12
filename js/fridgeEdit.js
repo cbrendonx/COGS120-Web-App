@@ -10,7 +10,7 @@ $(document).ready(function() {
 	// Assigns functionality to the add button.
 	$("#add").click(function() {
 
-		console.log("Clicked!");
+		console.log("Clicked");
 
 		// var toAdd = prompt("Enter an item");
 		var toAdd = document.getElementById("item").value;
@@ -37,7 +37,7 @@ $(document).ready(function() {
 		// Adds to the fridge.
 		if (!inArray(toAdd, fridge)) {
 
-			console.log("Adding the item!");
+			console.log("Adding the item");
 
 			fridge.push([1, toAdd]);
 
@@ -52,7 +52,7 @@ $(document).ready(function() {
 		}
 		else {
 
-			console.log("Incrementing item!");
+			console.log("Incrementing item");
 
 			var i = indexInArray(toAdd, fridge);
 			var qty = ++fridge[indexInArray(toAdd, fridge)][0];
@@ -76,11 +76,11 @@ function retrieveFridge() {
 
 	// If there are items, parses the items retrieved.
 	if (localFridge && localFridge != "[]") {
-		console.log("There are items in the fridge!");
+		console.log("There are items in the fridge");
 		fridge = JSON.parse(localFridge);
 	}
 	else {
-		console.log("There are no items in the fridge!");
+		console.log("There are no items in the fridge");
 	}
 
 	displayFridge();

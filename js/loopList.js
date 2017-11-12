@@ -23,7 +23,7 @@ $(document).ready(function(){
 				console.log("Nothing entered in input field.");
 				alert('Please enter an item description or click "Cancel Add".');
 			} else {
-				console.log("Item entered!");
+				console.log("Item entered");
 				/*var addNewItem = '<p><button class = "removeItem" id = "removeButton11">&times</button>' + inputVal + '</p>';
 				document.getElementById("panel-body" + index + p.length.value).appendChild(addListItem);
 				inputVal = "";
