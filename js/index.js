@@ -22,7 +22,7 @@ $(document).ready(function() {
 		localStorage.removeItem("family");
 		localStorage.removeItem("user");
 
-		console.log("Logging out!")
+		console.log("Logging out")
 		localStorage.removeItem("loggedIn");
 		window.location = "login.html"
 	});
@@ -43,11 +43,11 @@ function retrieveCart() {
 
 	// If there are items, parses the items retrieved.
 	if (localCart && localCart != "[]") {
-		console.log("There are items in the cart!");
+		console.log("There are items in the cart");
 		cart = JSON.parse(localCart);
 	}
 	else {
-		console.log("There are no items in the cart!");
+		console.log("There are no items in the cart");
 	}
 
 	return cart;
@@ -63,11 +63,11 @@ function retrieveFridge() {
 
 	// If there are items, parses the items retrieved.
 	if (localFridge && localFridge != "[]") {
-		console.log("There are items in the fridge!");
+		console.log("There are items in the fridge");
 		fridge = JSON.parse(localFridge);
 	}
 	else {
-		console.log("There are no items in the fridge!");
+		console.log("There are no items in the fridge");
 	}
 
 	return fridge;

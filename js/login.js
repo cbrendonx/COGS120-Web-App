@@ -52,14 +52,14 @@ $(document).ready(function() {
 
 			else {
 				console.log("Wrong password");
-				alert("Incorrect password!");
+				alert("Incorrect password");
 				return;
 			}
 		}
 
 		else {
 			console.log("Creating new user");
-			alert("User doesn't exist! Creating new user with password!");
+			alert("User doesn't exist! Creating new user with password");
 			userdb[user] = pass;
 			localStorage.setItem("userdb", JSON.stringify(userdb));
 		}
@@ -71,7 +71,7 @@ $(document).ready(function() {
 
 		var cart = [];
 		var fridge = [];
-		var family = {};
+		var family = [];
 
 		if (localData) {
 			var data = JSON.parse(localData);
@@ -85,7 +85,7 @@ $(document).ready(function() {
 		localStorage.setItem("fridge", JSON.stringify(fridge));
 		localStorage.setItem("family", JSON.stringify(family));
 
-		console.log("Logging in!")
+		console.log("Logging in")
 		localStorage.setItem("loggedIn", 0);
 		window.location = "index.html"
 	});

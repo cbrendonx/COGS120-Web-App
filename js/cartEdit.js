@@ -10,7 +10,7 @@ $(document).ready(function() {
 	// Assigns functionality to the add button.
 	$("#add").click(function() {
 
-		console.log("Clicked!");
+		console.log("Clicked");
 
 		// var toAdd = prompt("Enter an item");
 		var toAdd = document.getElementById("item").value;
@@ -37,7 +37,7 @@ $(document).ready(function() {
 		// Adds to the cart.
 		if (!inArray(toAdd, cart)) {
 
-			console.log("Adding the item!");
+			console.log("Adding the item");
 
 			cart.push([1, toAdd]);
 
@@ -52,7 +52,7 @@ $(document).ready(function() {
 		}
 		else {
 
-			console.log("Incrementing item!");
+			console.log("Incrementing item");
 
 			var i = indexInArray(toAdd, cart);
 			var qty = ++cart[indexInArray(toAdd, cart)][0];
@@ -76,11 +76,11 @@ function retrieveCart() {
 
 	// If there are items, parses the items retrieved.
 	if (localCart && localCart != "[]") {
-		console.log("There are items in the cart!");
+		console.log("There are items in the cart");
 		cart = JSON.parse(localCart);
 	}
 	else {
-		console.log("There are no items in the cart!");
+		console.log("There are no items in the cart");
 	}
 
 	displayCart();
