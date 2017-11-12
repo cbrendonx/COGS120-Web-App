@@ -23,15 +23,15 @@ $(document).ready(function() {
 		// Removes leading and trailing whitespaces.
 		toAdd = toAdd.trim();
 
+		// Clears the input field.
+		$("#item").val("");
+
 		// Returns if user did not enter any non-whitespace characters.
 		if (toAdd === "") {
 			alert("Please enter something valid");
 			return;
 		}
 
-		// Clears the input field.
-		$("#item").val("");
-		
 		console.log(toAdd);
 
 		// Adds to the cart.
