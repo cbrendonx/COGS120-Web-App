@@ -49,9 +49,9 @@ body{
 
 .changeButtons{
 	display: inline;
-	margin: 0.75em 0.5em 0em 1em;
-	padding: 1em 0em 2em 0em;
-	width: 45%;
+	margin: 0.75em  0em 0em 0em;
+	padding: 1em 0em 5% 0em;
+	width: 40%;
 	height: 70%;
 	font-size: 1.25em;
 	text-align: center;
@@ -65,6 +65,18 @@ body{
 	font-family: 'Montserrat', sans-serif;
 }
 
+#backButton{
+	float: left;
+	margin-left: 5%;
+	margin-right: 1.5%;
+}
+
+#removeButton{
+	float: right;
+	margin-left: 1.5%;
+	margin-right: 5%;
+}
+
 .famList{
 	width: 95%;
 	height: auto;
@@ -72,6 +84,7 @@ body{
 	display: block;
 	position: relative;
 	float: center;
+	font-family: 'Montserrat', sans-serif;
 }
 
 .arrowDown{
@@ -103,17 +116,6 @@ body{
 	transform: rotate(45deg) translate(-2.9em, 0.6em);
 }
 
-#backBar1, #backBar2{
-	width: 1.5em;
-    height: 0.25em;
-	position: relative;
-	margin-right: 3em;
-}
-
-#list1, #list2{
-	margin-top: 9em;
-}
-
 .panelDefault{
 	margin-bottom: 1em;
 	border: 0.5em solid transparent;
@@ -122,27 +124,24 @@ body{
 
 .listTitle{
 	cursor: pointer;
-}
-
-.listTitle h4{
-	font-size: 175%;
-}
-
-.panelDefault, .listTitle{
-	background-color: white;
-	font-family: 'Montserrat', sans-serif;
-}
-
-.listTitle{
 	color: #4286f4;
 	font-size: 1em;
 }
 
-.panel-body{
-	padding: 0.25em 0em 0em 1.5em;
+.listTitle h4{
+	font-size: 175%;
+	font-family: 'Montserrat', sans-serif;
 }
 
-#actualList1, #actualList2{
+.panelDefault, .listTitle{
+	background-color: white;
+}
+
+.panel-body{
+	
+}
+
+.actualList{
 	font-size: 1.5em;
 }
 
@@ -220,4 +219,3 @@ form p{
 	float: center;
 	text-align: center;
 }
-/*ddd*/
