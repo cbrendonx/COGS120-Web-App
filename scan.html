@@ -22,13 +22,12 @@
 <body>
 	<!-- Div to show the scanner -->
 	<div id="scanner-container"></div>
-	<input type="button" id="btn" value="Click here to scan your item" />
 	<div>
 	<a href="cart.html"> <button>Return to cart</button></a>
 	</div>
 
 	<!-- Include the image-diff library -->
-	<script src="quagga.min.js"></script>
+	<script src="js/quagga.min.js"></script>
 
 	<script>
 		var db = { "0477459943552": "Ralphs Card"};
@@ -41,8 +40,9 @@
 					type: "LiveStream",
 					target: document.querySelector('#scanner-container'),
 					constraints: {
-						width: 480,
-						height: 320,
+						width: {min: 640, ideal: 1920},
+						height: {min: 400, ideal: 1080},
+						aspectRatio: {ideal: 1.77777778},
 						facingMode: "environment"
 					},
 				},
@@ -131,7 +131,7 @@
 			});
 		}
 		// Start/stop scanner
-		document.getElementById("btn").addEventListener("click", function () {
+		/*document.getElementById("btn").addEventListener("click", function () {
 			if (_scannerIsRunning) {
 				Quagga.stop();
 				_scannerIsRunning=false;
@@ -141,6 +141,9 @@
 				document.getElementById("btn").style.visibility = "hidden";
 			}
 		}, false);
+		*/
+
+		startScanner();
 
 		var done = false;
 
