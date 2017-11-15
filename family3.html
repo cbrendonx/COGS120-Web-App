@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+
+<script src="js/auth.js"></script>
+
+<html>
+<head>
+	<title>family2</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+	<link href="css/bootstrap-theme.min.css" rel="stylesheet">
+	<link href="css/family2.css" rel="stylesheet">
+</head>
+
+<body>
+	<script id="list-template" type="text/x-handlebars-template">
+		<div id="person{{index}}" class="panel">
+			<div id="name{{index}}">
+				<h3 class="name">{{name}}</h3>
+			</div>
+
+			<div id="disown{{index}}">
+				<!-- p class="name">Remove</p> -->
+				<button class="btn btn-primary horizontal-btn">Disown Family Member</button>
+			</div>
+
+			<div id="list{{index}}">
+
+				<div id="content{{index}}">
+					{{#each entry}}
+					<p id="p{{@root.index}}{{@index}}" class="card"><button id="rm{{@root.index}}{{@index}}" class="remove-btn">&times</button> {{this}}</p>
+					{{/each}}
+				</div>
+
+				<div>
+					<button id="add{{index}}" class="btn btn-primary horizontal-btn">Add Entry</button>
+				</div>
+				<div>
+					<button id="cancel{{index}}" class="btn btn-primary horizontal-btn">Cancel</button>
+				</div>
+
+				<div>
+					<input type="text" id="input{{index}}" class="horizontal-input"></input>
+				</div>
+			</div>
+		</div>
+	</script>
+
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-2"></div>
+			<div class="col-sm-8">
+
+				<div class="jumbotron">
+					<h1>Family</h1>
+				</div>
+
+				<p>Press on a name to expand an entry!</p>
+
+				<div id="family-list">
+				</div>
+
+				<div>
+					<input type="text" id="new-name" class="horizontal-input"></input>
+					<button id="new-name-btn" class="btn btn-primary horizontal-btn">Add New Family Member</button>
+				</div>
+
+				<div>
+					<br><br><br>
+					<a href="cart.html"><button class="btn btn-primary horizontal-btn">&larr; Back</button></a>
+					<br><br><br>
+				</div>
+			</div>
+			<div class="col-sm-2"></div>
+		</div>
+	</div>
+
+	<script src="https://code.jquery.com/jquery.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/handlebars-v4.0.11.js"></script>
+	<script src="js/family2.js"></script>
+</body>
+</html>
