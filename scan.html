@@ -11,6 +11,7 @@
 	height=device-height, initial-scale=1">
 	<link href="css/bootstrap.min.css" rel="stylesheet">
 	<link href="css/bootstrap-theme.min.css" rel="stylesheet">
+	<link href="css/scan.css" rel="stylesheet">
 	<style>
 		/* In order to place the tracking correctly */
 		canvas.drawing, canvas.drawingBuffer {
@@ -22,10 +23,22 @@
 </head>
 
 <body>
+	<div class="container">
+	<div class="jumbotron">
+
+		<h1>Scanner</h1>
+
+
+	<h2>Please scan your item</h2>
+	</div>
+
 	<!-- Div to show the scanner -->
 	<div id="scanner-container"></div>
+	<br>
 	<div>
 	<a href="cart.html"> <button type="button" class="btn btn-default">Return to cart</button></a>
+	</div>
+	<br>
 	</div>
 
 	<!-- Include the image-diff library -->
@@ -42,9 +55,9 @@
 					type: "LiveStream",
 					target: document.querySelector('#scanner-container'),
 					constraints: {
-						width: {min: 640, ideal: 1920},
-						height: {min: 400, ideal: 1080},
-						aspectRatio: {ideal: 1.77777778},
+						width: 300,
+						height: 300,
+						ideal: 300,
 						facingMode: "environment"
 					},
 				},
