@@ -2,7 +2,7 @@ body {
 	/*background-color: #AFEEEE;*/
 	background-image: url("../images/FamilyPortrait.jpg");
 	top: 0;
-	position absolute;
+	position: absolute;
 	background-size: 200%;
 	background-position: 50% 50%;
 	background-repeat: no-repeat;
