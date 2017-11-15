@@ -46,7 +46,7 @@ $(document).ready(function() {
 
 			// Appends the new item to the list.
 			var i = fridge.length - 1;
-			fridgeList.append("<li id=fridgeItem" + i + "><button id='inc" + i + "'>+</button><button id='dec" + i + "'>-</button> 1 " + toAdd + "</li>");
+			fridgeList.append("<li id=fridgeItem" + i + "><button class='btn btn-default' id='inc" + i + "'>+</button><button class='btn btn-default' id='dec" + i + "'>-</button> 1 " + toAdd + "</li>");
 			$("#inc" + i).click(incQty);
 			$("#dec" + i).click(decQty);
 		}
@@ -56,7 +56,7 @@ $(document).ready(function() {
 
 			var i = indexInArray(toAdd, fridge);
 			var qty = ++fridge[indexInArray(toAdd, fridge)][0];
-			$("#fridgeItem" + i).html("<button id='inc" + i + "'>+</button><button id='dec" + i + "'>-</button> " + qty + " "+ toAdd);
+			$("#fridgeItem" + i).html("<button class='btn btn-default' id='inc" + i + "'>+</button><button class='btn btn-default' id='dec" + i + "'>-</button> " + qty + " "+ toAdd);
 			$("#inc" + i).click(incQty);
 			$("#dec" + i).click(decQty);
 		}
@@ -99,7 +99,7 @@ function displayFridge() {
 		var qty = fridge[i][0];
 		var item = fridge[i][1];
 
-		fridgeList.append("<li id=fridgeItem" + i + "><button id='inc" + i + "'>+</button><button id='dec" + i + "'>-</button> " + qty + " " + item + "</li>");
+		fridgeList.append("<li id=fridgeItem" + i + "><button class='btn btn-default' id='inc" + i + "'>+</button><button class='btn btn-default' id='dec" + i + "'>-</button> " + qty + " " + item + "</li>");
 		$("#inc" + i).click(incQty);
 		$("#dec" + i).click(decQty);
 	}	
