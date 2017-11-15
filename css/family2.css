@@ -1,8 +1,10 @@
 body {
 	/*background-color: #AFEEEE;*/
 	background-image: url("../images/FamilyPortrait.jpg");
-	background-size: 150%;
-	background-position: 60% 5%;
+	top: 0;
+	position absolute;
+	background-size: 200%;
+	background-position: 50% 50%;
 	background-repeat: no-repeat;
 	font-family: 'Montserrat', sans-serif;
 	color: white;
@@ -23,13 +25,14 @@ h1{
 	text-align: center;
 }
 
-.jumbotron p, .container p {
-	text-align: center;
+
+.container p {
+	font-size: 1.5em;
 }
 
 .panel {
 	/*background-color: #a7e5e5;*/
-	background-color: black;
+	background-color: #4a5059;
 	padding-left: 5%;
 	padding-right: 5%;
 	padding-bottom: 20px;
@@ -37,7 +40,11 @@ h1{
 	border-color: black;
 	border-style: solid;
 	border-radius: 15px;
-	
+	opacity: 0.95;
+}
+
+.content{
+	text-align: left;
 }
 
 .name {
@@ -67,19 +74,101 @@ h1{
 .horizontal-btn {
 	width: 100%;
 	margin-bottom: 5px;
+	border-radius: 5px;
 }
 
 .horizontal-input {
 	padding: 5px;
 	width: 100%;
+	border-radius: 5px;
 }
 
 .blackFade{
 	top: 0;
-	width: 100%;
+	width: 150%;
 	height: 100%;
 	position: absolute;
 	background-color: black;
 	opacity: 0.5;
 	z-index: -1;
+}
+
+@media screen and (min-width: 768px) {
+	.blackFade{
+		width: 500em;
+		margin-left: -10%;
+		margin-right: 5%;
+		float: center;
+	}
+	.button-group button {
+		font-size: 3.5em;
+	}
+	.blackFade{
+		margin-left: -5%;
+		margin-right: 5%;
+	}
+	body {
+		background-size: 200%;
+	}
+}
+
+@media screen and (min-width: 375px) {
+	body {
+		background-size: 300%;
+		background-position: 60% 20%;
+	}
+	.button-group button {
+		font-size: 2.4em;
+	}
+	
+	.blackFade{
+		margin-left: -2.5%;
+		margin-right: 5%;
+		height: 130%;
+	}
+}
+
+@media screen and (max-width: 375px) {
+	.jumbotron {
+		font-size: 3em;
+	}
+	.button-group button {
+		font-size: 1.5em;
+	}
+	body {
+		background-size: 500%;
+	}
+	.blackFade{
+		margin-left: -5%;
+		margin-right: 5%;
+	}
+}
+
+@media screen and (max-width: 250px) {
+	.jumbotron {
+		font-size: 1.5em;
+	}
+	body {
+		background-size: 1000%;
+	}
+	.button-group button {
+		font-size: 1em;
+	}
+	.blackFade{
+		margin-left: -10%;
+		margin-right: 5%;
+	}
+}
+
+@media screen and (max-width: 150px) {
+	.jumbotron {
+		font-size: 1em;
+	}
+	body {
+		background-size: 2000%;
+	}
+	.blackFade{
+		margin-left: -15%;
+		margin-right: 5%;
+	}
 }
