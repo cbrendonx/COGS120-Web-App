@@ -69,8 +69,10 @@ body {
 
 @media screen and (min-width: 768px) {
 	.blackFade{
-		margin-left: 2.5%;
+		width: 500em;
+		margin-left: -10%;
 		margin-right: 5%;
+		float: center;
 	}
 	.button-group button {
 		font-size: 3.5em;
@@ -107,6 +109,8 @@ body {
 @media screen and (max-width: 150px) {
 	.jumbotron {
 		font-size: 1em;
+		margin-left: 5%;
+		margin-right: 5%;
 	}
 	body {
 		background-size: 2000%;
