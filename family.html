@@ -44,13 +44,16 @@
 				{{/each}}
 			</div>
 			<div class = "listFooter" id = "listFooter{{index}}">
-				<button class = "moreButtons" id = "addItem{{index}}">+ Add Item</button>
-				<button class = "moreButtons" id = "cancelButton{{index}}">Cancel Add</button>
+				<div class = "buttonsInRow">
+					<button class = "moreButtons" id = "addItem{{index}}">+ Add Item</button>
+					<button class = "moreButtons" id = "cancelButton{{index}}">Cancel Add</button>
+				</div>
 				<div class = "form" id = "descriptForm{{index}}">
 					<form>
 					  <p>Item Description:</p>
 						<input type="text" class = "inputText" id = "textInput{{index}}">
 					</form>
+					<p class = "emptyMsg" id = "emptyMsg{{index}}">*Please enter any and all items.</p>
 				</div>
 			</div>
 		</div>

@@ -27,19 +27,57 @@ html {
 
 .jumbotron {
 	text-align: center;
-	background-color: #a7e5e5;
+	background-color: transparent;
+	color: white;
+	font-size: 3em;
+}
+
+.blackFade{
+	top: 0;
+	margin-left: 5%;
+	margin-right: 5%;
+	width: 85%;
+	height: 100%;
+	position: absolute;
+	background-color: black;
+	opacity: 0.5;
+	z-index: -1;
+	box-shadow: 0px 0px 20px 20px rgba(0,0,0,.5);
+	float: center;
+	
 }
 
 .row {
 	text-align: center;
 }
 
-.container {
-	background-color: #AFEEEE;
+body {
+	background-image: url(../images/main-menu-pic.jpeg);
+	background-size: 500%;
+	background-position: 50% 50%;
+	background-repeat: no-repeat;
+	font-family: 'Montserrat', sans-serif;
 }
 
 .button-group button {
 	padding: 10px 30px;
 	margin: 5px;
-	width: 75%;
+	width: 95%;
+	border-radius: 2em;
+	font-size: 3em;
+}
+
+@media screen and (max-width: 375px) {
+	.button-group button {
+		font-size: 2em;
+	}
+	body {
+		background-size: 2000%;
+	}
+}
+
+@media screen and (max-width: 150px) {
+	body {
+		background-size: 2000%;
+	}
 }
