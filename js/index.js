@@ -12,8 +12,9 @@ $(document).ready(function() {
 
 		var cart = retrieveCart();
 		var fridge = retrieveFridge();
+		var family = retrieveFamily();
 
-		var data = {"cart": cart, "fridge": fridge, "family": {}};
+		var data = {"cart": cart, "fridge": fridge, "family": family};
 		localStorage.setItem(user, JSON.stringify(data));
 
 		// Clears the local cart and fridge.
@@ -25,11 +26,6 @@ $(document).ready(function() {
 		console.log("Logging out")
 		localStorage.removeItem("loggedIn");
 		window.location = "login.html"
-	});
-
-	// Assigns functionality to the localStorage.clear() button.
-	$("#clr").click(function() {
-		localStorage.clear();
 	});
 });
 
@@ -71,4 +67,24 @@ function retrieveFridge() {
 	}
 
 	return fridge;
+}
+
+// Helper function that retrieves the family from localStorage.
+function retrieveFamily() {
+
+	var family = [];
+
+	// Retrieves the family from localStorage.
+	var localFamily = localStorage.getItem("family");
+
+	// If there are members, parses the members retrieved.
+	if (localFamily && localFamily!= "[]") {
+		console.log("There are members in the family");
+		family = JSON.parse(localFamily);
+	}
+	else {
+		console.log("There are no members in the family");
+	}
+
+	return family;
 }

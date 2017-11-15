@@ -8,23 +8,29 @@
 	<title>fridgeEdit1</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+	<link href="css/bootstrap-theme.min.css" rel="stylesheet">
 </head>
 
 <body>
+	<div class="container">
+	<div class="jumbotron">
 	<h1>Edit Fridge</h1>
+	</div>
 
 	<input type="text" placeholder="Type item name" id="item"></input>
-	<button id="add">Add Item</button>
+	<button class="btn btn-default" id="add">Add Item</button>
 
 	<ul id="fridgeList">
 	</ul>
 
 	<div>
-		<a href="fridge1.html"><button id="save">Save Changes</button></a>
+		<a href="fridge1.html"><button class="btn btn-default" id="save">Save Changes</button></a>
 	</div>
 
 	<div>
-		<a href="fridge1.html"><button>< Cancel</button></a>
+		<a href="fridge1.html"><button class="btn btn-default">< Cancel</button></a>
+	</div>
 	</div>
 
 	<script src="https://code.jquery.com/jquery.js"></script>
