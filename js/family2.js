@@ -165,7 +165,7 @@ function displayList() {
 		});
 
 		$("#input" + i).keypress(function(event) {
-			if (event.which == 13) {
+			if (event.which === 13) {
 				console.log("Enter");
 				var id = this.getAttribute("id");
 				var index = id.substr(5);

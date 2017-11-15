@@ -25,6 +25,7 @@ $(document).ready(function(){
 		var cancelButton  = $("#cancelButton" + i);
 		var form          = $("#descriptForm" + i);
 		var textField     = $("#textInput" + i);
+		var emptyMsg      = $("#emptyMsg" + i);
 		var transition    = 250;
 		
 		if (i === 0) {
@@ -36,6 +37,7 @@ $(document).ready(function(){
 		addItemButton.hide();
 		cancelButton.hide();
 		form.hide();
+		emptyMsg.hide();
 		
 		listName.click(function(){
 			var idIndex = this.getAttribute("id").substr(5);
@@ -45,14 +47,30 @@ $(document).ready(function(){
 			if (listName.is(":visible")){
 				$("#cancelButton" + idIndex).hide(transition);
 				$("#descriptForm" + idIndex).hide(transition);
-				$("#textInput" + idIndex).value("");
+				$("#textInput" + idIndex).val("");
 			}
 		});
 		
 		addItemButton.click(function(){
 			var idIndex = this.getAttribute("id").substr(7);
-			$("#cancelButton" + idIndex).slideDown(transition);
-			$("#descriptForm" + idIndex).slideDown(transition);
+			if (!textField.is(":visible")) {
+				$("#cancelButton" + idIndex).slideDown(transition);
+				$("#descriptForm" + idIndex).slideDown(transition);
+			} else if (textField.is(":visible")) {
+				console.log("Entered " + idIndex);
+				var addText = $("#textInput" + idIndex).val();
+				
+				if (addText === "") {
+					$("#emptyMsg" + idIndex).show(transition);
+				} else {
+					familyList.index.entry.push(addText);
+					displayContent(index);
+					$("#textInput" + idIndex).val("");
+					if (emptyMsg.is(":visible")){
+						$("#emptyMsg" + idIndex).hide();
+					}
+				}
+			}
 		});
 		
 		cancelButton.click(function(){
@@ -65,3 +83,21 @@ $(document).ready(function(){
 		
 	}
 });
+
+function displayContent(index) {
+
+	var content = $("#content" + index);
+
+	// Clears the div.
+	content.html("");
+
+	// Repopulates.
+	var array = family[index]["entry"];
+	for (var i = 0; i < array.length; i++) {
+		content.append("<p id='p" + index + i + "'' class='card'><button id='rm" + index + i + "'' class='remove-btn'>&times</button> " + array[i] + "</p>");
+
+		// Attaches a click handler to the remove button.
+		$("#rm" + index + i).click(removeHandler);
+			
+	}
+}
