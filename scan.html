@@ -55,9 +55,9 @@
 					type: "LiveStream",
 					target: document.querySelector('#scanner-container'),
 					constraints: {
-						width: 300,
-						height: 300,
-						ideal: 300,
+						width: {min: 300, ideal: 500},
+						height: {min: 300, ideal: 500},
+						aspectRatio: {ideal: 1.7777778},
 						facingMode: "environment"
 					},
 				},
