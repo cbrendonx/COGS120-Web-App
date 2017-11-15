@@ -27,7 +27,7 @@
 
 			<div id="list{{index}}">
 
-				<div id="content{{index}}">
+				<div class = "content" id="content{{index}}">
 					{{#each entry}}
 					<p id="p{{@root.index}}{{@index}}" class="card"><button id="rm{{@root.index}}{{@index}}" class="remove-btn">&times</button> {{this}}</p>
 					{{/each}}
@@ -61,11 +61,17 @@
 
 			  <div id="family-list">
 				</div>
-<div>
-		  <br><br><br>
+
+				<div>
+					<input type="text" id="new-name" class="horizontal-input"></input>
+					<button id="new-name-btn" class="btn btn-primary horizontal-btn">Add New Family Member</button>
+				</div>
+
+				<div>
+					<br><br><br>
 					<a href="index.html"><button class="btn btn-primary horizontal-btn">&larr; Back</button></a>
 					<br><br><br>
-			  </div>
+				</div>
 			</div>
 			<div class="col-sm-2"></div>
 		<div class = "blackFade">

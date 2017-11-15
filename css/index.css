@@ -77,11 +77,21 @@ body {
 	.button-group button {
 		font-size: 3.5em;
 	}
+	.blackFade{
+		margin-left: -5%;
+		margin-right: 5%;
+	}
 }
 
 @media screen and (min-width: 375px) {
 	.button-group button {
 		font-size: 2.4em;
+	}
+	
+	.blackFade{
+		margin-left: -2.5%;
+		margin-right: 5%;
+		height: 130%;
 	}
 }
 
@@ -95,6 +105,10 @@ body {
 	body {
 		background-size: 2000%;
 	}
+	.blackFade{
+		margin-left: -5%;
+		margin-right: 5%;
+	}
 }
 
 @media screen and (max-width: 250px) {
@@ -104,15 +118,21 @@ body {
 	.button-group button {
 		font-size: 1em;
 	}
+	.blackFade{
+		margin-left: -10%;
+		margin-right: 5%;
+	}
 }
 
 @media screen and (max-width: 150px) {
 	.jumbotron {
 		font-size: 1em;
-		margin-left: 5%;
-		margin-right: 5%;
 	}
 	body {
 		background-size: 2000%;
+	}
+	.blackFade{
+		margin-left: -15%;
+		margin-right: 5%;
 	}
 }
