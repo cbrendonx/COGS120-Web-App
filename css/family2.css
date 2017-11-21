@@ -1,17 +1,24 @@
 body {
 	/*background-color: #AFEEEE;*/
 	background-image: url("../images/FamilyPortrait.jpg");
+	background-attachment: fixed;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: 50% 30%;
 	top: 0;
 	position: absolute;
-	background-size: 200%;
-	background-position: 50% 50%;
-	background-repeat: no-repeat;
 	font-family: 'Montserrat', sans-serif;
 	color: white;
+	width: 100%;
+	height: 200%;
 }
 .container {
 	/*background-color: #AFEEEE;*/
 	background-color: transparent;
+}
+
+.col-sm-8{
+	position: relative;
 }
 
 h1{
@@ -23,8 +30,17 @@ h1{
 	color: white;
 	float: center;
 	text-align: center;
+	position:relative;
+	width: 100%;
 }
 
+#descript{
+	float: center;
+	text-align: center;
+	width: 100%;
+	position: relative;
+	margin: 1.5em 0em;
+}
 
 .container p {
 	font-size: 1.5em;
@@ -32,29 +48,40 @@ h1{
 
 .panel {
 	/*background-color: #a7e5e5;*/
-	background-color: #4a5059;
 	padding-left: 5%;
 	padding-right: 5%;
 	padding-bottom: 20px;
-	border-width: 1px;
-	border-color: black;
-	border-style: solid;
+	border-color: rgba(255,255,255,0.5);
 	border-radius: 15px;
-	opacity: 0.95;
+	background: black;
+	-webkit-transition: all ease-in-out 0.3s;
+    -moz-transition: all ease-in-out 0.3s;
+    -o-transition: all ease-in-out 0.3s;
+    transition: all ease-in-out 0.3s;
+	box-shadow: inset 0em 0em 5em 1em rgba(255,255,255,0.25), 0em 0em 1em .5em rgba(255,255,255,0.5);
+}
+
+.panel:hover{
+	border-color: rgba(255,255,255,0.5);
+	box-shadow: inset 0em 0em 5em 1em rgba(255,255,255,0.75), 0em 0em 1em .5em rgba(255,255,255,0.5);
 }
 
 .content{
 	text-align: left;
 }
 
+.nameCont{
+	background: transparent;
+	opacity: 1;
+}
+
 .name {
 	padding: 20px;
 	text-align: center;
 	border-width: 1px;
-	border-color: black;
-	border-style: solid;
 	border-radius: 15px;
 	font-family: 'Montserrat', sans-serif;
+	cursor: pointer;s
 }
 
 .card {
@@ -66,7 +93,7 @@ h1{
 }
 
 .remove-btn {
-	border-radius: 100%;
+	border-radius: 250%;
 	background-color: white;
 	border-color: #ccf0ff;
 }
@@ -75,6 +102,7 @@ h1{
 	width: 100%;
 	margin-bottom: 5px;
 	border-radius: 5px;
+	padding: 0.65em 0em;
 }
 
 .horizontal-input {
@@ -91,6 +119,20 @@ h1{
 	background-color: black;
 	opacity: 0.5;
 	z-index: -1;
+}
+
+.list-template{
+	width: 100%;
+	position: relative;
+}
+
+.cancel-btn{
+	width: 100%;
+	background: rgb(224, 11, 11);
+}
+
+.cancel-btn:hover{
+	background: rgb(211, 0, 0);
 }
 
 @media screen and (min-width: 768px) {

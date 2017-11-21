@@ -1,0 +1,14 @@
+body{
+	position: absolute;
+	background-image: url("../images/shoppingCart.jpg");
+	background-attachment: fixed;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-size: 200%;
+	background-position: 70% 20%;
+	height: 100%;
+}
+
+.container{
+	filter: blur(-2px);
+}

@@ -27,24 +27,27 @@ html {
 
 .jumbotron {
 	text-align: center;
+	float: center;
 	background-color: transparent;
 	color: white;
 	font-size: 3em;
+	position: relative;
+	width: 100%;
+}
+
+#welcome{
+	
 }
 
 .blackFade{
 	top: 0;
-	margin-left: 5%;
-	margin-right: 5%;
 	width: 100%;
-	height: 125%;
+	height: 110%;
 	position: absolute;
 	background-color: black;
 	opacity: 0.5;
 	z-index: -1;
 	box-shadow: 0px 0px 20px 20px rgba(0,0,0,.5);
-	float: center;
-	
 }
 
 .row {
@@ -54,9 +57,11 @@ html {
 body {
 	background-image: url(../images/main-menu-pic.jpeg);
 	background-size: 500%;
-	background-position: 50% 50%;
+	background-position: 70% 50%;
 	background-repeat: no-repeat;
 	font-family: 'Montserrat', sans-serif;
+	position: absolute;
+	width: 100%;
 }
 
 .button-group button {
@@ -67,19 +72,15 @@ body {
 	font-size: 3em;
 }
 
+
+
 @media screen and (min-width: 768px) {
 	.blackFade{
 		width: 500em;
-		margin-left: -10%;
-		margin-right: 5%;
 		float: center;
 	}
 	.button-group button {
 		font-size: 3.5em;
-	}
-	.blackFade{
-		margin-left: -5%;
-		margin-right: 5%;
 	}
 }
 
@@ -89,25 +90,19 @@ body {
 	}
 	
 	.blackFade{
-		margin-left: -2.5%;
-		margin-right: 5%;
 		height: 130%;
 	}
 }
 
 @media screen and (max-width: 375px) {
 	.jumbotron {
-		font-size: 3em;
+		font-size: 2em;
 	}
 	.button-group button {
 		font-size: 1.5em;
 	}
 	body {
 		background-size: 2000%;
-	}
-	.blackFade{
-		margin-left: -5%;
-		margin-right: 5%;
 	}
 }
 
@@ -118,10 +113,6 @@ body {
 	.button-group button {
 		font-size: 1em;
 	}
-	.blackFade{
-		margin-left: -10%;
-		margin-right: 5%;
-	}
 }
 
 @media screen and (max-width: 150px) {
@@ -130,9 +121,5 @@ body {
 	}
 	body {
 		background-size: 2000%;
-	}
-	.blackFade{
-		margin-left: -15%;
-		margin-right: 5%;
 	}
 }
