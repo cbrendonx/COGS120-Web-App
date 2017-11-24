@@ -19,7 +19,7 @@ body, .jumbotron h1{
 
 .blackFade{
 	top: 0;
-	margin-left: 	-10%;
+	margin-left: -15%;
 	width: 120%;
 	height: 102%;
 	position: absolute;
@@ -110,8 +110,11 @@ body, .jumbotron h1{
 	height: 100%;
 }
 
-@media screen and (max-width: 350px) {
-
+@media screen and (min-width: 992px) {
+	.btn-primary{
+		margin-right: 5%;
+		padding: 0.5em 2.5%;
+	}
 }
 
 @media screen and (min-width: 768px) {
@@ -130,6 +133,7 @@ body, .jumbotron h1{
 @media screen and (min-width: 622px) and (max-width: 768px) {
 	.btn-primary{
 		font-size: 1.8em;
+		margin-right: 2.5%;
 		padding: 0.5em;
 	}
 	.jumbotron h1{
@@ -161,7 +165,7 @@ body, .jumbotron h1{
 	.btn-primary{
 		display: block;
 		font-size: 1.75em;
-		margin: 0.5em 0em;
+		margin: 0.5em 0em 0.5em 2.5%;
 		padding: 0.5em;
 		width: 100%;
 		text-align: center;
@@ -186,7 +190,7 @@ body, .jumbotron h1{
 	
 	.btn-primary{
 		font-size: 1.5em;
-		margin: 0.25em 0em;
+		margin: 0.25em 0em 0.25em 5%;
 		padding: 0.5em 0.25em;
 		width: 100%;
 		text-align: center;
@@ -209,5 +213,6 @@ body, .jumbotron h1{
 	.btn-default{
 		font-size: 1.25em;
 		padding: 0.75em 0.5em;
+		margin-left: 15%;
 	}
 }
