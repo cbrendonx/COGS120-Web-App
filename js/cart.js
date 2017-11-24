@@ -43,7 +43,9 @@ function displayCart() {
 		var qty = cart[i][0];
 		var item = cart[i][1];
 
-		cartList.append("<li id=cartItem" + i + ">" + qty + " " + item + "</li>");
+		cartList.append("<li class = 'items' id=cartItem" + i + ">" + qty + " " + item + "</li>");
+		
+		var heightNum = $("#cartItem" + i).height();
 	}	
 }
 
