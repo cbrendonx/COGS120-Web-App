@@ -26,14 +26,13 @@ body, .jumbotron h1{
 	background-color: black;
 	background-size: 130%;
 	background-attachment: fixed;
-	opacity: 0.4;
+	opacity: 0.6;
 	z-index: -1;
-	box-shadow: 0px 0px 20px 20px rgba(0,0,0,1);
+	box-shadow: 0px 0px 20px 20px rgba(0,0,0,0.4);
 }
 
 .container{
 	position: relative;
-	filter: blur(-2px);
 	width: 100%;
 	height: 150%;
 	color: white;
@@ -161,12 +160,14 @@ body, .jumbotron h1{
 }
 
 @media screen and (min-height: 700px) {
+	
 	.blackFade{
 		height: 110%;
 	}
 }
 
 @media screen and (min-width: 992px) {
+	
 	.btn-primary{
 		margin-right: 5%;
 		padding: 0.5em 2.5%;
@@ -174,12 +175,15 @@ body, .jumbotron h1{
 }
 
 @media screen and (min-width: 768px) {
+	
 	body{
 		background-position: 70% 20%;
 	}
+	
 	.blackFade{
-		height: 110%;
+		height: 105%;
 	}
+	
 	.jumbotron h1{
 		height: 1.25em;
 		font-size: 3.25em;
@@ -187,37 +191,52 @@ body, .jumbotron h1{
 }
 
 @media screen and (min-width: 622px) and (max-width: 768px) {
+	
 	.btn-primary{
 		font-size: 1.8em;
 		margin-right: 2.5%;
 		padding: 0.5em;
 	}
+	
 	.jumbotron h1{
 		height: 1.25em;
 		font-size: 3.25em;
 	}
+	
+	.blackFade{
+		height: 105%;
+	}
 }
 
 @media screen and (max-width: 622px) {
+	
 	.jumbotron {
 		margin-bottom: 1em;
 	}
+	
 	#scanItem{
 		width: 90%;
 		font-size: 0.8em;
 	}
+	
+	.blackFade{
+		height: 105%;
+	}
+	
 	.btn-default{
 		font-size: 2em;
 	}
 }
 
 @media screen and (min-width: 510px) and (max-width: 622px) {
+	
 	.btn-primary{
 		font-size: 1.75em;
 	}
 }
 
 @media screen and (min-width: 350px) and (max-width: 622px){
+	
 	.btn-primary{
 		display: block;
 		font-size: 1.75em;
@@ -226,9 +245,11 @@ body, .jumbotron h1{
 		width: 100%;
 		text-align: center;
 	}
+	
 	.btn-primary{
 		float: center;
 	}
+	
 	.jumbotron h1{
 		height: 1em;
 		font-size: 3em;
@@ -236,17 +257,18 @@ body, .jumbotron h1{
 }
 
 @media screen and (max-width: 350px) {
+	
 	body{
 		background-size: 800%;
 	}
 	
 	.blackFade{
-		height: 110%;
+		height: 105%;
 	}
 	
 	.btn-primary{
 		font-size: 1.5em;
-		margin: 0.25em 0em 0.25em 5%;
+		margin: 0.25em 0em 0.25em 0%;	
 		padding: 0.5em 0.25em;
 		width: 100%;
 		text-align: center;
@@ -258,7 +280,7 @@ body, .jumbotron h1{
 	}
 	
 	#scanItem{
-		width: 105%;
+		width: 100%;
 		font-size: 0.8em;
 	}
 	
@@ -268,7 +290,28 @@ body, .jumbotron h1{
 	
 	.btn-default{
 		font-size: 1.25em;
-		padding: 0.75em 0.5em;
-		margin-left: 15%;
+		padding: 0.5em 0.65em;
+		margin-left: 2.5%;
+	}
+}
+
+@media screen and (max-width: 200px) {
+		
+	.btn-primary{
+		font-size: 1em;
+	}
+	
+	#scanItem{
+		width: 120%;
+		padding: 0.75em 0.75em;
+		font-size: 0.55em;
+	}
+	
+	.inputName, .form-control{
+		font-size: 1.25em;
+	}
+	
+	.btn-default{
+		font-size: 1em;
 	}
 }
