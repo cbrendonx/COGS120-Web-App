@@ -21,10 +21,10 @@ body, .jumbotron h1{
 	top: 0;
 	margin-left: -15%;
 	width: 120%;
-	height: 102%;
+	height: 110%;
 	position: absolute;
 	background-color: black;
-	background-size: 110%;
+	background-size: 130%;
 	background-attachment: fixed;
 	opacity: 0.4;
 	z-index: -1;
@@ -35,7 +35,7 @@ body, .jumbotron h1{
 	position: relative;
 	filter: blur(-2px);
 	width: 100%;
-	height: 100%;
+	height: 150%;
 }
 
 .buttonGroup{
@@ -50,7 +50,6 @@ body, .jumbotron h1{
 }
 
 .btn-primary{
-	margin: 0em .25em;
 	padding: 0.25em 0.5em;
 	border-radius: 0.5em;
 	font-size: 2.25em;
@@ -110,6 +109,12 @@ body, .jumbotron h1{
 	height: 100%;
 }
 
+@media screen and (min-height: 700px) {
+	.blackFade{
+		height: 110%;
+	}
+}
+
 @media screen and (min-width: 992px) {
 	.btn-primary{
 		margin-right: 5%;
@@ -165,7 +170,7 @@ body, .jumbotron h1{
 	.btn-primary{
 		display: block;
 		font-size: 1.75em;
-		margin: 0.5em 0em 0.5em 2.5%;
+		margin: 0.5em 0em;
 		padding: 0.5em;
 		width: 100%;
 		text-align: center;
