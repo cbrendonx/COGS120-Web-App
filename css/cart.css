@@ -102,6 +102,9 @@ body, .jumbotron h1{
 	body{
 		background-position: 70% 20%;
 	}
+	.blackFade{
+		height: 150%;
+	}
 	.jumbotron h1{
 		height: 8em;
 		font-size: 3.25em;
