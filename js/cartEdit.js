@@ -99,7 +99,7 @@ function displayCart() {
 		var qty = cart[i][0];
 		var item = cart[i][1];
 
-		cartList.append("<li id=cartItem" + i + "><button class='btn btn-default' id='inc" + i + "'>+</button><button class='btn btn-default' id='dec" + i + "'>-</button> " + qty + " " + item + "</li>");
+		cartList.append("<li id=cartItem" + i + "><button class='btn btn-default' id='inc" + i + "'>+</button><button class='btn btn-default' id='dec" + i + "'>-</button>" + "&nbsp;&nbsp;" + qty + " " + item + "</li>");
 		$("#inc" + i).click(incQty);
 		$("#dec" + i).click(decQty);
 	}	

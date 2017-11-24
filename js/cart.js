@@ -42,10 +42,12 @@ function displayCart() {
 
 		var qty = cart[i][0];
 		var item = cart[i][1];
-
-		cartList.append("<li class = 'items' id=cartItem" + i + ">" + qty + " " + item + "</li>");
 		
-		var heightNum = $("#cartItem" + i).height();
+		if (qty == 1){
+			cartList.append("<li class = 'items' id=cartItem" + i + ">" + "<div class = 'bPoint'>&#9634;</div>" + " " + item + "</li>");
+		} else {
+			cartList.append("<li class = 'items' id=cartItem" + i + ">" + "<div class = 'bPoint'>&#9634;</div>" + " " + qty + " " + item + "</li>");
+		}
 	}	
 }
 

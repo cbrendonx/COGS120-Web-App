@@ -7,9 +7,9 @@ body{
 	background-position: 70% 20%;
 	width: 100%;
 	height: auto;
-	overflow-y: scroll;
-  	-webkit-overflow-scrolling: touch;
+	-webkit-overflow-scrolling: touch;
 	overflow-x: hidden;
+	overflow-y: scroll;
 }
 
 body, .jumbotron h1{
@@ -19,9 +19,9 @@ body, .jumbotron h1{
 
 .blackFade{
 	top: 0;
-	margin-left: -10%;
-	width: 110%;
-	height: 110%;
+	margin-left: 	-10%;
+	width: 120%;
+	height: 102%;
 	position: absolute;
 	background-color: black;
 	background-size: 110%;
@@ -64,15 +64,27 @@ body, .jumbotron h1{
 	
 .jumbotron{
 	text-align: center;
-	margin-bottom: 4em;
-	height: 1em;
+	margin-bottom: 2em;
+	height: 9em;
 	padding: 1em;
 	background-color: transparent;
 	color: white;
 }
 
+#scanItem{
+	display: inline;
+	font-size: 1.25em;
+	padding: 0.75em;
+	width: 70%;
+}
+
 #cartList{
 	list-style: none;
+}
+
+.bPoint{
+	display: inline-block;
+	font-size: 0.65em;
 }
 
 .items{
@@ -81,6 +93,10 @@ body, .jumbotron h1{
 	font-size: 3em;
 	padding: 0.25em 0.25em;
 	color: white;
+}
+
+.buttonGroup2{
+	position: relative;
 }
 
 .btn-default{
@@ -103,10 +119,10 @@ body, .jumbotron h1{
 		background-position: 70% 20%;
 	}
 	.blackFade{
-		height: 150%;
+		height: 110%;
 	}
 	.jumbotron h1{
-		height: 8em;
+		height: 1.25em;
 		font-size: 3.25em;
 	}
 }
@@ -117,12 +133,19 @@ body, .jumbotron h1{
 		padding: 0.5em;
 	}
 	.jumbotron h1{
-		height: 5em;
+		height: 1.25em;
 		font-size: 3.25em;
 	}
 }
 
 @media screen and (max-width: 622px) {
+	.jumbotron {
+		margin-bottom: 1em;
+	}
+	#scanItem{
+		width: 90%;
+		font-size: 0.8em;
+	}
 	.btn-default{
 		font-size: 2em;
 	}
@@ -147,7 +170,7 @@ body, .jumbotron h1{
 		float: center;
 	}
 	.jumbotron h1{
-		height: 5em;
+		height: 1em;
 		font-size: 3em;
 	}
 }
@@ -170,8 +193,13 @@ body, .jumbotron h1{
 	}
 	
 	.jumbotron h1{
-		height: 5em;
+		height: 1.5em;
 		font-size: 2em;
+	}
+	
+	#scanItem{
+		width: 105%;
+		font-size: 0.8em;
 	}
 	
 	.items{
