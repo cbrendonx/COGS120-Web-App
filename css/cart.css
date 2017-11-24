@@ -65,18 +65,23 @@ body, .jumbotron h1{
 .jumbotron{
 	text-align: center;
 	margin-bottom: 2em;
+	width: 100%;
 	height: 9em;
 	padding: 1em;
 	background-color: transparent;
 	color: white;
 }
 
+.jumbotron h1{
+	width: 100%;
+}
+
 #scanItem{
 	display: inline;
-	font-size: 1.25em;
-	margin-bottom: 1em;
-	padding: 0.75em;
-	width: 70%;
+	font-size: 1.1em;
+	margin: 0em 0em 1em 0em;
+	padding: 0.5em 0.25em;
+	width: 50%;
 }
 
 #cartList{
@@ -99,6 +104,10 @@ body, .jumbotron h1{
 	position: relative;
 }
 
+.descript{
+	margin: 0em 2.5%;
+}
+
 .inputName{
 	position: relative;
 	font-size: 2em;
@@ -109,15 +118,31 @@ body, .jumbotron h1{
 	margin-top: 2em;
 }
 
-datalist{
-	display: inline;
-	position: relative;
-	width: 50%;
-	height: 10%;
-}
-
 .form-control{
 	margin-top: 0.5em;
+	font-size: 1.25em;
+	padding: 1.25em 0.75em;
+	border-radius: 0.75em;
+}
+
+#quantGroup{
+	display: flex;
+	flex-direction: row;
+	width: auto;
+}
+
+#quantGroup{
+	float: center;
+}
+
+#addNum{
+	margin-top: 1.5em;
+	width: 25%;
+	text-align: center;
+}
+
+.buttonGroup3{
+	margin-left: 1%;
 }
 
 .btn-default{
@@ -129,6 +154,10 @@ datalist{
 	border-radius: .5em;
 	font-size: 2.5em;
 	height: 100%;
+}
+
+#add{
+	margin-top: 1em;
 }
 
 @media screen and (min-height: 700px) {
