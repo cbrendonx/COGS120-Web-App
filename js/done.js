@@ -37,7 +37,7 @@ function cartToFridge() {
 
 			// If the item exists in the fridge, increments the quantity.
 			if (inArray(item, fridge)) {
-				fridge[indexInArray(item, fridge)][0]++;
+				fridge[indexInArray(item, fridge)][0] = fridge[indexInArray(item, fridge)][0] + cart[i][0];
 			}
 
 			// Otherwise, pushes the tiem to the fridge.
@@ -58,20 +58,21 @@ function cartToFridge() {
 	}
 }
 
-function inArray(item, arr) {
-	for (var i = 0; i < arr.length; i++) {
-		if (arr[i][1] === item) {
-			return true;
-		}
-	}
-	return false;
-}
+// These helper functions are now found in common.js.
+// function inArray(item, arr) {
+// 	for (var i = 0; i < arr.length; i++) {
+// 		if (arr[i][1] === item) {
+// 			return true;
+// 		}
+// 	}
+// 	return false;
+// }
 
-function indexInArray(item, arr) {
-	for (var i = 0; i< arr.length; i++) {
-		if (arr[i][1] === item) {
-			return i;
-		}
-	}
-	return -1;
-}
+// function indexInArray(item, arr) {
+// 	for (var i = 0; i< arr.length; i++) {
+// 		if (arr[i][1] === item) {
+// 			return i;
+// 		}
+// 	}
+// 	return -1;
+// }
