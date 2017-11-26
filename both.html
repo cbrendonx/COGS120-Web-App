@@ -24,12 +24,34 @@
 			<h1>Cart</h1>
 		</div>
 
+		<!-- Disabled edit button.
 		<div>
 			<a href="cartEdit2.html"><button class="btn btn-default">Edit</button></a>
 		</div>
+		-->
 
 		<ul id="cartList">
 		</ul>
+
+		<div class="emptySpace"></div>
+		
+		<div class="buttonGroup2">
+		  <div class="descript" id="descriptGroup">
+			<div class="inputName" id="itemName">Item Name</div>
+			<input type="text" class="form-control" placeholder="What's the item?" id="cartItemToAdd"></input>
+		  </div>
+		  
+		  <div class="descript" id="quantGroup">
+			<div class="inputName" id="quantity">Quantity:&nbsp;&nbsp;</div>
+			<input type="text" class="form-control" id="cartAddNum" placeholder="How many?" onkeypress="return event.charCode >= 48 && event.charCode <= 57"></input>
+		  </div>
+		</div>
+
+		<div>
+			<button class="btn btn-default" id="cartAdd">Add Item</button>
+		</div>
+		  
+	    <div class="emptySpace"></div>
 
 		<br>
 
@@ -37,12 +59,34 @@
 			<h1>Fridge</h1>
 		</div>
 
+		<!-- Disabled edit button.
 		<div>
 			<a href="fridgeEdit3.html"><button class="btn btn-default">Edit</button></a>
 		</div>
+		-->
 
 		<ul id="fridgeList">
 		</ul>
+
+		<div class="emptySpace"></div>
+		
+		<div class="buttonGroup2">
+		  <div class="descript" id="descriptGroup">
+			<div class="inputName" id="itemName">Item Name</div>
+			<input type="text" class="form-control" placeholder="What's the item?" id="fridgeItemToAdd"></input>
+		  </div>
+		  
+		  <div class="descript" id="quantGroup">
+			<div class="inputName" id="quantity">Quantity:&nbsp;&nbsp;</div>
+			<input type="text" class="form-control" id="fridgeAddNum" placeholder="How many?" onkeypress="return event.charCode >= 48 && event.charCode <= 57"></input>
+		  </div>
+		</div>
+		  
+	    <div class="emptySpace"></div>
+
+	    <div>
+			<button class="btn btn-default" id="fridgeAdd">Add Item</button>
+		</div>
 
 		<div>
 			<a href="index.html"><button class="btn btn-default" id="done">Done Shopping</button></a>
@@ -50,8 +94,11 @@
 	</div>
 
 	<script src="https://code.jquery.com/jquery.js"></script>
-	<script src="js/cart.js"></script>
-	<script src="js/fridge.js"></script>
+	<!-- <script src="js/cart.js"></script> -->
+	<!-- <script src="js/fridge.js"></script> -->
+	<script src="js/cartEdit.js"></script>
+	<script src="js/fridgeEdit.js"></script>
+	<script src="js/common.js"></script>
 	<script src="js/done.js"></script>
 </body>
 
