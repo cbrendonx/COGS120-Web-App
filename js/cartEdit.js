@@ -8,65 +8,93 @@ $(document).ready(function() {
 	retrieveCart();
 
 	// Assigns functionality to the add button.
-	$("#add").click(function() {
-
-		console.log("Clicked");
-
-		// var toAdd = prompt("Enter an item");
-		var toAdd = document.getElementById("item").value;
-
-		// Returns if user cancelled.
-		if (toAdd == null) {
-			return;
-		}
-
-		// Removes leading and trailing whitespaces.
-		toAdd = toAdd.trim();
-
-		// Clears the input field.
-		$("#item").val("");
-
-		// Returns if user did not enter any non-whitespace characters.
-		if (toAdd === "") {
-			alert("Please enter something valid");
-			return;
-		}
-
-		console.log(toAdd);
-
-		// Adds to the cart.
-		if (!inArray(toAdd, cart)) {
-
-			console.log("Adding the item");
-
-			cart.push([1, toAdd]);
-
-			// Gets the html element with the id cartList.
-			var cartList = $("#cartList");
-
-			// Appends the new item to the list.
-			var i = cart.length - 1;
-			cartList.append("<li id=cartItem" + i + "><button class='btn btn-default' id='inc" + i + "'>+</button><button class='btn btn-default' id='dec" + i + "'>-</button> 1 " + toAdd + "</li>");
-			$("#inc" + i).click(incQty);
-			$("#dec" + i).click(decQty);
-		}
-		else {
-
-			console.log("Incrementing item");
-
-			var i = indexInArray(toAdd, cart);
-			var qty = ++cart[indexInArray(toAdd, cart)][0];
-			$("#cartItem" + i).html("<button class='btn btn-default' id='inc" + i + "'>+</button><button class='btn btn-default' id='dec" + i + "'>-</button> " + qty + " " + toAdd);
-			$("#inc" + i).click(incQty);
-			$("#dec" + i).click(decQty);
-		}
-	});
+	$("#cartAdd").click(addItemToCart);
 
 	// Assigns functionality to the save button.
-	$("#save").click(function() {
-		localStorage.setItem("cart", JSON.stringify(cart));
-	});
+	// $("#save").click(function() {
+	// 	localStorage.setItem("cart", JSON.stringify(cart));
+	// });
 });
+
+// Helper function that adds an item to the cart.
+function addItemToCart() {
+
+	console.log("Clicked");
+
+	// var toAdd = prompt("Enter an item");
+	var toAdd = document.getElementById("cartItemToAdd").value;
+	var qty = Number(document.getElementById("cartAddNum").value);
+
+	// Returns if user cancelled.
+	if (toAdd == null) {
+		return;
+	}
+
+	// Removes leading and trailing whitespaces.
+	toAdd = toAdd.trim();
+
+	// Returns if user did not enter any non-whitespace characters.
+	if (toAdd === "") {
+		alert("Please enter a valid item name");
+		return;
+	}
+
+	if (qty <= 0) {
+		alert("Please enter a valid quantity");
+		$("#cartAddNum").val("");
+		return;
+	}
+
+	// Clears the input field.
+	$("#cartItemToAdd").val("");
+	$("#cartAddNum").val("");
+
+	console.log(toAdd);
+
+	// Adds to the cart.
+	if (!inArray(toAdd, cart)) {
+
+		console.log("Adding the item");
+
+		cart.push([qty, toAdd]);
+
+		// Gets the html element with the id cartList.
+		var cartList = $("#cartList");
+
+		// Appends the new item to the list.
+		var i = cart.length - 1;
+
+		// OLD: Uncomment if reverting back to the increment-decrement functionality.
+		// cartList.append("<li id=cartItem" + i + "><button class='btn btn-default' id='inc" + i + "'>+</button><button class='btn btn-default' id='dec" + i + "'>-</button> 1 " + toAdd + "</li>");
+		// $("#inc" + i).click(incCartQty);
+		// $("#dec" + i).click(decCartQty);
+
+		cartList.append("<li id=cartItem" + i + "><input type='text' id='cartQty" + i + "' onkeypress='return event.charCode >= 48 && event.charCode <= 57'></input>" + toAdd + "</li>");
+		$("#cartQty" + i).val(qty);
+		$("#cartQty" + i).keypress(updateCartQty);
+	}
+	else {
+
+		console.log("Incrementing item");
+
+		var i = indexInArray(toAdd, cart);
+
+		// OLD: Uncomment if reverting back to the increment-decrement functionality.
+		// var qty = ++cart[indexInArray(toAdd, cart)][0];
+		// $("#cartItem" + i).html("<button class='btn btn-default' id='inc" + i + "'>+</button><button class='btn btn-default' id='dec" + i + "'>-</button> " + cartQty + " " + toAdd);
+		// $("#inc" + i).click(incCartQty);
+		// $("#dec" + i).click(decCartQty);
+
+		qty = qty + cart[indexInArray(toAdd, cart)][0];
+		cart[indexInArray(toAdd, cart)][0] = qty;
+		$("#cartItem" + i).html("<input type='text' id='cartQty" + i + "' onkeypress='return event.charCode >= 48 && event.charCode <= 57'></input>" + toAdd);
+		$("#cartQty" + i).val(qty);
+		$("#cartQty" + i).keypress(updateCartQty);
+	}
+
+	// Saves the updated cart to local storage.
+ 	localStorage.setItem("cart", JSON.stringify(cart));
+}
 
 // Helper function that retrieves the cart from localStorage.
 function retrieveCart() {
@@ -99,56 +127,93 @@ function displayCart() {
 		var qty = cart[i][0];
 		var item = cart[i][1];
 
-		cartList.append("<li id=cartItem" + i + "><button class='btn btn-default' id='inc" + i + "'>+</button><button class='btn btn-default' id='dec" + i + "'>-</button>" + "&nbsp;&nbsp;" + qty + " " + item + "</li>");
-		$("#inc" + i).click(incQty);
-		$("#dec" + i).click(decQty);
+		// OLD: Uncomment if reverting back to the increment-decrement functionality.
+		// cartList.append("<li id=cartItem" + i + "><button class='btn btn-default' id='inc" + i + "'>+</button><button class='btn btn-default' id='dec" + i + "'>-</button> " + cartQty + " " + item + "</li>");
+		// $("#inc" + i).click(incCartQty);
+		// $("#dec" + i).click(decCartQty);
+
+		cartList.append("<li id=cartItem" + i + "><input type='text' id='cartQty" + i + "' onkeypress='return event.charCode >= 48 && event.charCode <= 57'></input>" + item + "</li>");
+		$("#cartQty" + i).val(qty);
+		$("#cartQty" + i).keypress(updateCartQty);
 	}	
 }
 
 // Event handler that decreases the quantity of an item.
-function decQty() {
-	console.log("Decreasing quantity");
-	console.log(this);
+// function decCartQty() {
+// 	console.log("Decreasing quantity");
+// 	console.log(this);
 
-	var id = this.getAttribute("id");
-	var index = id.substr(3);
-	var count = --cart[index][0];
+// 	var id = this.getAttribute("id");
+// 	var index = id.substr("inc".length);
+// 	var count = --cart[index][0];
 
-	// Removes the item from the list when the quantity is 0 or less.
-	if (count <= 0) {
-		cart.splice(index, 1)
-		console.log($(this).parent().remove());
-	}
+// 	// Removes the item from the list when the quantity is 0 or less.
+// 	if (count <= 0) {
+// 		cart.splice(index, 1)
+// 		console.log($(this).parent().remove());
+// 	}
 
-	displayCart();
-}
+// 	displayCart();
+// }
 
 // Event handler that increases the quantity of an item.
-function incQty() {
-	console.log("Increasing quantity");
-	console.log(this);
+// function incCartQty() {
+// 	console.log("Increasing quantity");
+// 	console.log(this);
 
-	var id = this.getAttribute("id");
-	var index = id.substr(3);
-	cart[index][0]++;
+// 	var id = this.getAttribute("id");
+// 	var index = id.substr("dec".length);
+// 	cart[index][0]++;
 
-	displayCart();
-}
+// 	displayCart();
+// }
 
-function inArray(item, arr) {
-	for (var i = 0; i < arr.length; i++) {
-		if (arr[i][1] === item) {
-			return true;
+// Event handler that updates the quantity of an item.
+function updateCartQty() {
+	if (event.which === 13) {
+		console.log("Enter pressed");
+		console.log(this);
+
+		var id = this.getAttribute("id");
+		var index = id.substr("cartQty".length);
+
+		var qty = Number(document.getElementById("cartQty" + index).value);
+
+		// Removes the item from the page and from the cart array.
+		if (qty  <= 0) {
+			console.log("Removing item");
+			cart.splice(index, 1)
+			console.log($(this).parent().remove());
+
+			displayCart();
 		}
+
+		// Updates the quantity in the cart array.
+		else {
+			console.log("Updating quantity");
+			cart[index][0] = qty;
+		}
+
+		// Saves the updated cart to local storage.
+	 	localStorage.setItem("cart", JSON.stringify(cart));
 	}
-	return false;
 }
 
-function indexInArray(item, arr) {
-	for (var i = 0; i< arr.length; i++) {
-		if (arr[i][1] === item) {
-			return i;
-		}
-	}
-	return -1;
-}
+// These helper functions are now found in common.js.
+// function inArray(item, arr) {
+// 	for (var i = 0; i < arr.length; i++) {
+// 		if (arr[i][1] === item) {
+// 			return true;
+// 		}
+// 	}
+// 	return false;
+// }
+
+// function indexInArray(item, arr) {
+// 	for (var i = 0; i< arr.length; i++) {
+// 		if (arr[i][1] === item) {
+// 			return i;
+// 		}
+// 	}
+// 	return -1;
+// }
