@@ -18,14 +18,14 @@ function cartToFridge() {
 		console.log("There are items in the cart");
 		cart = JSON.parse(localCart);
 
-		console.log("Moving items from the cart to the fridge")
+		console.log("Moving items from the cart to the fridge");
 		console.log(cart);
 
 		// Retrieves the fridge from localStorage.
 		var localFridge = localStorage.getItem("fridge");
 
 		// If there are items, parses the items retrieved.
-		if (localFridge && localFridge != "[]") {
+		if (localFridge && localFridge !== "[]") {
 			console.log("There are items in the fridge");
 			fridge = JSON.parse(localFridge);
 		}	

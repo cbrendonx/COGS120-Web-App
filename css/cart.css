@@ -92,6 +92,12 @@ body, .jumbotron h1{
 	font-size: 0.65em;
 }
 
+.changeQuant{
+	text-align: center;
+	font-size: 1.25em;
+	border-radius: 0.5em;
+}
+
 .items{
 	width: 100%;
 	height: auto;

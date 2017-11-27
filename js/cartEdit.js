@@ -26,7 +26,7 @@ function addItemToCart() {
 	var qty = Number(document.getElementById("cartAddNum").value);
 
 	// Returns if user cancelled.
-	if (toAdd == null) {
+	if (toAdd === null) {
 		return;
 	}
 
@@ -69,7 +69,7 @@ function addItemToCart() {
 		// $("#inc" + i).click(incCartQty);
 		// $("#dec" + i).click(decCartQty);
 
-		cartList.append("<li id=cartItem" + i + "><input type='text' id='cartQty" + i + "' onkeypress='return event.charCode >= 48 && event.charCode <= 57'></input>" + toAdd + "</li>");
+		cartList.append("<li id=cartItem" + i + "><input type='text' class = 'changeQuant' id='cartQty" + i + "' onkeypress='return event.charCode >= 48 && event.charCode <= 57'></input>" + toAdd + "</li>");
 		$("#cartQty" + i).val(qty);
 		$("#cartQty" + i).keypress(updateCartQty);
 	}
@@ -77,19 +77,19 @@ function addItemToCart() {
 
 		console.log("Incrementing item");
 
-		var i = indexInArray(toAdd, cart);
+		var j = indexInArray(toAdd, cart);
 
 		// OLD: Uncomment if reverting back to the increment-decrement functionality.
 		// var qty = ++cart[indexInArray(toAdd, cart)][0];
 		// $("#cartItem" + i).html("<button class='btn btn-default' id='inc" + i + "'>+</button><button class='btn btn-default' id='dec" + i + "'>-</button> " + cartQty + " " + toAdd);
 		// $("#inc" + i).click(incCartQty);
 		// $("#dec" + i).click(decCartQty);
-
-		qty = qty + cart[indexInArray(toAdd, cart)][0];
-		cart[indexInArray(toAdd, cart)][0] = qty;
-		$("#cartItem" + i).html("<input type='text' id='cartQty" + i + "' onkeypress='return event.charCode >= 48 && event.charCode <= 57'></input>" + toAdd);
-		$("#cartQty" + i).val(qty);
-		$("#cartQty" + i).keypress(updateCartQty);
+		var changeQuant = "changeQuant";
+		qty = qty + cart[j][0];
+		cart[j][0] = qty;
+		$("#cartItem" + j).html("<input type='text' class = '" + changeQuant + "' id='cartQty" + j + "' onkeypress='return event.charCode >= 48 && event.charCode <= 57'></input>" + toAdd);
+		$("#cartQty" + j).val(qty);
+		$("#cartQty" + j).keypress(updateCartQty);
 	}
 
 	// Saves the updated cart to local storage.
@@ -103,7 +103,7 @@ function retrieveCart() {
 	var localCart = localStorage.getItem("cart");
 
 	// If there are items, parses the items retrieved.
-	if (localCart && localCart != "[]") {
+	if (localCart && localCart !== "[]") {
 		console.log("There are items in the cart");
 		cart = JSON.parse(localCart);
 	}
@@ -132,7 +132,7 @@ function displayCart() {
 		// $("#inc" + i).click(incCartQty);
 		// $("#dec" + i).click(decCartQty);
 
-		cartList.append("<li id=cartItem" + i + "><input type='text' id='cartQty" + i + "' onkeypress='return event.charCode >= 48 && event.charCode <= 57'></input>" + item + "</li>");
+		cartList.append("<li id=cartItem" + i + "><input type='text' class = 'changeQuant' id='cartQty" + i + "' onkeypress='return event.charCode >= 48 && event.charCode <= 57'></input>" + item + "</li>");
 		$("#cartQty" + i).val(qty);
 		$("#cartQty" + i).keypress(updateCartQty);
 	}	
