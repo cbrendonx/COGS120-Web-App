@@ -26,6 +26,7 @@ html {
 */
 
 body{
+	width: 100%;
 	overflow-x: hidden;
 }
 
@@ -45,8 +46,10 @@ body{
 
 .blackFade{
 	top: 0;
-	width: 100%;
+	left: -10%;
+	width: 120%;
 	height: 110%;
+	margin-left: -2.5%;
 	position: absolute;
 	background-color: black;
 	opacity: 0.5;
