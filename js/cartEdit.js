@@ -9,6 +9,24 @@ $(document).ready(function() {
 
 	// Assigns functionality to the add button.
 	$("#cartAdd").click(addItemToCart);
+	// This grayed out code should dynamically change the
+	// width of quantity text box as length of number
+	// characters increases.
+	/*var i = $("#cartQty").getAttribute("id").substr(7);
+	//$("#cartQty" + i).keypress(expandInputBox);
+	$("#cartQty" + i).on('input', function() {
+		var boxWidth = $(this).width();
+    	var textLength = $(this).val().length;
+    	if (textLength > 9) {
+			$(this).css('width', boxWidth * 2);
+		} else if (textLength > 6) {
+			$(this).css('width', boxWidth * 1.5);
+		} else if (textLength > 3) {
+			$(this).css('width', boxWidth);
+		} else {
+			$(this).css('width', boxWidth * 0.5);
+		}
+	}).trigger('input');*/
 
 	// Assigns functionality to the save button.
 	// $("#save").click(function() {
@@ -69,7 +87,7 @@ function addItemToCart() {
 		// $("#inc" + i).click(incCartQty);
 		// $("#dec" + i).click(decCartQty);
 
-		cartList.append("<li id=cartItem" + i + "><input type='text' class = 'changeQuant' id='cartQty" + i + "' onkeypress='return event.charCode >= 48 && event.charCode <= 57'></input>" + toAdd + "</li>");
+		cartList.append("<li class = listItem id=cartItem" + i + "><input type='text' class = 'changeQuant' id='cartQty" + i + "' onkeypress='return event.charCode >= 48 && event.charCode <= 57'></input>" + toAdd + "</li>");
 		$("#cartQty" + i).val(qty);
 		$("#cartQty" + i).keypress(updateCartQty);
 	}
@@ -132,7 +150,7 @@ function displayCart() {
 		// $("#inc" + i).click(incCartQty);
 		// $("#dec" + i).click(decCartQty);
 
-		cartList.append("<li id=cartItem" + i + "><input type='text' class = 'changeQuant' id='cartQty" + i + "' onkeypress='return event.charCode >= 48 && event.charCode <= 57'></input>" + item + "</li>");
+		cartList.append("<li class = cartItems id = cartItem" + i + "><input type='text' class = 'changeQuant' id='cartQty" + i + "' onkeypress='return event.charCode >= 48 && event.charCode <= 57'><p class = listItem id = 'itemNum" + i + "'>"+ item + "</p></li>");
 		$("#cartQty" + i).val(qty);
 		$("#cartQty" + i).keypress(updateCartQty);
 	}	
@@ -196,6 +214,26 @@ function updateCartQty() {
 
 		// Saves the updated cart to local storage.
 	 	localStorage.setItem("cart", JSON.stringify(cart));
+	}
+}
+
+function expandInputBox() {
+	var i = $(this).getAttribute("id").substr(7);
+	var getInputBox = $("#cartQty" + i);
+	var	numLength = getInputBox.val().length;
+	
+	if (numLength > 9) {
+		$("#cartQty" + i).css('font-size','0.5em');
+		$("#cartQty" + i).css('width','25%');
+	} else if (numLength > 6) {
+		$("#cartQty" + i).css('font-size','0.75em');
+		$("#cartQty" + i).css('width','20%');
+	} else if (numLength > 3) {
+		$("#cartQty" + i).css('font-size','1em');
+		$("#cartQty" + i).css('width','15%');
+	} else {
+		$("#cartQty" + i).css('font-size','1.25em');
+		$("#cartQty" + i).css('width','10%');
 	}
 }
 
