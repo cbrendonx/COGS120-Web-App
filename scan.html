@@ -32,8 +32,7 @@
 	</div>
 
 	<!-- Div to show the scanner -->
-	<div id="scanner-container" class="viewport"></div>
-	<div id="scanner-container" class="viewport col-md-12"></div>
+	<div id="scanner-container"></div>
 	<br>
 	<div>
 	<a href="cart.html"> <button type="button" class="btn btn-default">Return to cart</button></a>
@@ -55,7 +54,8 @@
 					type: "LiveStream",
 					target: document.querySelector('#scanner-container'),
 					constraints: {
-						//width: window.innerWidth,
+						width: window.innerWidth,
+						height: window.innerHeight,
 						facingMode: "environment"
 					},
 					area: {
