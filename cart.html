@@ -44,16 +44,21 @@
 
 		<div class="emptySpace"></div>
 		
-		<div class="buttonGroup2">
-		  <div class="descript" id="descriptGroup">
-			<div class="inputName" id="itemName">Item Name</div>
-			<input type="text" class="form-control" placeholder="What's the item?" id="cartItemToAdd">
-		  </div>
-		  
-		  <div class="descript" id="quantGroup">
-			<div class="inputName" id="quantity">Quantity:&nbsp;&nbsp;</div>
-			<input type="text" class="form-control" id="cartAddNum" placeholder="How many?" onkeypress="return event.charCode >= 48 && event.charCode <= 57">
-		  </div>
+		<div class="section">
+		<div class="row">
+			<div class="col-xs-8">
+				<div>
+					<label>Item Name</label>
+					<input type="text" class="form-control" placeholder="What's the item?" id="fridgeItemToAdd"></input>
+				</div>
+			</div>
+
+			<div class="col-xs-4">
+				<div>
+					<label>Quantity</label>
+					<input type="text" class="form-control" id="fridgeAddNum" placeholder="123" onkeypress="return event.charCode >= 48 && event.charCode <= 57"></input>
+				</div>
+			</div>
 		</div>
 		  
 	    <div class="emptySpace"></div>
@@ -69,9 +74,6 @@
 			
 			<button class="btn btn-default" id="cartAdd">Add Item</button>
 
-			<a href="scan.html">
-			</a>
-
 			<div>
 				<a href="family3.html"><button class="btn btn-default">View Family</button></a>
 			</div>
@@ -79,6 +81,7 @@
 			<div>
 				<a href="index.html"><button class="btn btn-default" id="done">Done Shopping</button></a>
 			</div>
+		</div>
 		</div>
 		
 		
