@@ -87,7 +87,7 @@ function addItemToCart() {
 		// $("#inc" + i).click(incCartQty);
 		// $("#dec" + i).click(decCartQty);
 
-		cartList.append("<li class = listItem id=cartItem" + i + "><input type='text' class = 'changeQuant' id='cartQty" + i + "' onkeypress='return event.charCode >= 48 && event.charCode <= 57'></input>" + toAdd + "</li>");
+		cartList.append("<li class = cartItems id=cartItem" + i + "><input type='text' class = 'changeQuant' id='cartQty" + i + "' onkeypress='return event.charCode >= 48 && event.charCode <= 57'><p class = listItem id = itemNum" + i + ">" + toAdd + "</p></li>");
 		$("#cartQty" + i).val(qty);
 		$("#cartQty" + i).keypress(updateCartQty);
 	}
@@ -105,7 +105,7 @@ function addItemToCart() {
 		var changeQuant = "changeQuant";
 		qty = qty + cart[j][0];
 		cart[j][0] = qty;
-		$("#cartItem" + j).html("<input type='text' class = '" + changeQuant + "' id='cartQty" + j + "' onkeypress='return event.charCode >= 48 && event.charCode <= 57'></input>" + toAdd);
+		$("#cartItem" + j).html("<input type='text' class = '" + changeQuant + "' id='cartQty" + j + "' onkeypress='return event.charCode >= 48 && event.charCode <= 57'>" + "<p class = listItem id = itemNum" + j + ">" + toAdd + "</p></li>");
 		$("#cartQty" + j).val(qty);
 		$("#cartQty" + j).keypress(updateCartQty);
 	}
