@@ -69,7 +69,7 @@ function addItemToFridge() {
 		// $("#inc" + i).click(incFridgeQty);
 		// $("#dec" + i).click(decFridgeQty);
 
-		fridgeList.append("<li id=fridgeItem" + i + "><input type='text' id='fridgeQty" + i + "' onkeypress='return event.charCode >= 48 && event.charCode <= 57'></input>" + toAdd + "</li>");
+		fridgeList.append("<li id=fridgeItem" + i + "><input class='form-control' type='text' id='fridgeQty" + i + "' onkeypress='return event.charCode >= 48 && event.charCode <= 57'></input><p>" + toAdd + "</p></li>");
 		$("#fridgeQty" + i).val(qty);
 		$("#fridgeQty" + i).keypress(updateFridgeQty);
 	}
@@ -87,7 +87,7 @@ function addItemToFridge() {
 
 		qty = qty + fridge[indexInArray(toAdd, fridge)][0];
 		fridge[indexInArray(toAdd, fridge)][0] = qty;
-		$("#fridgeItem" + i).html("<input type='text' id='fridgeQty" + i + "' onkeypress='return event.charCode >= 48 && event.charCode <= 57'></input>" + toAdd);
+		$("#fridgeItem" + i).html("<input class='form-control' type='text' id='fridgeQty" + i + "' onkeypress='return event.charCode >= 48 && event.charCode <= 57'></input><p>" + toAdd + "</p>");
 		$("#fridgeQty" + i).val(qty);
 		$("#fridgeQty" + i).keypress(updateFridgeQty);
 	}
@@ -132,7 +132,7 @@ function displayFridge() {
 		// $("#inc" + i).click(incFridgeQty);
 		// $("#dec" + i).click(decFridgeQty);
 
-		fridgeList.append("<li id=fridgeItem" + i + "><input type='text' id='fridgeQty" + i + "' onkeypress='return event.charCode >= 48 && event.charCode <= 57'></input>" + item + "</li>");
+		fridgeList.append("<div class='row item' id=fridgeItem" + i + "><div class='col-xs-4'><input class='form-control' type='text' id='fridgeQty" + i + "' onkeypress='return event.charCode >= 48 && event.charCode <= 57'></input></div><div class='col-xs-8'><p>" + item + "</p></div></div>");
 		$("#fridgeQty" + i).val(qty);
 		$("#fridgeQty" + i).keypress(updateFridgeQty);
 	}	
