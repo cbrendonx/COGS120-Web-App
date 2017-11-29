@@ -27,7 +27,7 @@ label {
 	/*background-color: rgba(40, 40, 40, 0.75);*/
 }
 
-.fridge2btn {
+.fridgebtn {
 	margin-top: 10px;
 }
 
@@ -35,11 +35,11 @@ label {
 	padding: 0;
 }
 
-.fridge2btn-group {
+.fridgebtn-group {
 	text-align: center;
 }
 
-.fridge2btn-group button {
+.fridgebtn-group button {
 	width: 100%;
 	font-size: 1.75em;
 }
@@ -54,7 +54,7 @@ label {
 	margin: 10px;
 }
 
-.section2 {
+.section-list {
 /*	border: solid;
 	border-color: white;
 	background-color: rgba(255, 255, 255, 0.75);
@@ -64,7 +64,7 @@ label {
 	margin: 10px;
 }
 
-.section2 p {
+.section-list p {
 	color: white;
 }
 
