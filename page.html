@@ -15,25 +15,12 @@
   		gtag('config', 'UA-110388752-1');
 	</script>
 
-	<script src="https://code.jquery.com/jquery.js"></script>
-	<script type="text/javascript">
-		localStorage.setItem("showAlternate", "true");
- 
- 		// lines below render page.html
- 		$.get("page.html", function (data) {
- 			document.open();
- 			document.write(data);
- 			document.close();
- 			$.cache = {};
- 		}, "text");
- 	</script>
-
-	<title>index2</title>
+	<title>index</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link href="css/bootstrap.min.css" rel="stylesheet">
 	<link href="css/bootstrap-theme.min.css" rel="stylesheet">
-	<link href="css/index2.css" rel="stylesheet">
+	<link href="css/index.css" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Montserrat:700" rel="stylesheet">
 </head>
 
@@ -42,7 +29,7 @@
 	<div class="main-content">
 
 		<img src="images/shopping-cart.png">
-
+			
 		<div class="button-group">
 
 			<a href="cart.html">
@@ -62,10 +49,10 @@
 	-->
 
 	<div class="container">
+		
 		<div class="jumbotron">
 			<p id="welcome"></p>
 		</div>
-		<p class="paragraph2">Press on "Start Shopping" to begin managing your cart.</p>
 
 		<div class="row">
 			<div class="button-group">
@@ -73,21 +60,20 @@
 					<a href="cart.html">
 						<button type="button" class="btn btn-primary">Start Shopping</button>
 					</a>
-					<p class="paragraph2">Press on "View My Fridge" to look at items recorded in your refrigerator.</p>
 				</div>
+
 				<div class="col-sm-12">
 					<a href="fridge1.html">
 						<button type="button" class="btn btn-primary">View My Fridge</button>
 					</a>
-					<p class="paragraph2" id = "preference">Press on "View My Family" to make changes to your family's food preferences.</p>
 				</div>
-				
+
 				<div class="col-sm-12">
 					<a href="family2.html">
 						<button type="button" class="btn btn-primary">View My Family</button>
 					</a>
 				</div>
-				<p class="space"></p>
+
 				<div class="col-sm-12">
 					<button id="log-out" type="button" class="btn btn-primary">Log Out</button>
 				</div>
@@ -101,19 +87,17 @@
 					<!-- <button id="populate" type="button" class="btn btn-danger">[DEV] Populate</button> -->
 					<br><br><br>
 				</div>
-
+				
 			</div>
 		</div>
 		
-		<div class = "blackFade">
-		</div>
-		
+		<div class = "blackFade"></div>
 	</div>
-</body>
 
-<script src="https://code.jquery.com/jquery.js"></script>
-<script src="js/bootstrap.min.js"></script>
-<script src="js/index.js"></script>
-<script src="js/dev.js"></script>
+	<script src="https://code.jquery.com/jquery.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/index.js"></script>
+	<script src="js/dev.js"></script>
+</body>
 
 </html>
