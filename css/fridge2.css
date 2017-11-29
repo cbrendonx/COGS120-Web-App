@@ -1,3 +1,32 @@
+body {
+	background: linear-gradient(
+      rgba(0, 0, 0, 0.4), 
+      rgba(0, 0, 0, 0.4)
+    ), url("../images/shoppingCart.jpg");
+	background-attachment: fixed;
+	font-family: 'Montserrat', sans-serif;
+	letter-spacing: 0.05em;
+}
+
+.jumbotron h1 {
+	font-family: 'Montserrat', sans-serif;
+	letter-spacing: 0.05em;
+}
+
+p {
+	font-size: 1.75em;
+	height: auto;
+	overflow-wrap: break-word;
+}
+
+label {
+	font-size: 1.25em;
+}
+
+.container {
+	/*background-color: rgba(40, 40, 40, 0.75);*/
+}
+
 .fridge2btn {
 	margin-top: 10px;
 }
@@ -12,15 +41,31 @@
 
 .fridge2btn-group button {
 	width: 100%;
+	font-size: 1.75em;
 }
 
 .section {
 	border: solid;
-	border-color: black;
+	border-color: white;
+	background-color: rgba(255, 255, 255, 0.75);
 	border-width: 1px;
 	border-radius: 10px;
 	padding: 20px;
 	margin: 10px;
+}
+
+.section2 {
+/*	border: solid;
+	border-color: white;
+	background-color: rgba(255, 255, 255, 0.75);
+	border-width: 1px;
+	border-radius: 10px;*/
+	padding: 20px;
+	margin: 10px;
+}
+
+.section2 p {
+	color: white;
 }
 
 .section-full {
@@ -29,7 +74,7 @@
 
 .item {
 	margin-bottom: 10px;
-	background-color: rgb(240, 240, 240);
+	/*background-color: rgba(240, 240, 240, 0.75);*/
 	border-radius: 10px;
 	padding: 5px;
 }
@@ -40,4 +85,5 @@
 
 .jumbotron {
 	text-align: center;
+	background-color: rgba(240, 240, 240, 0.75);
 }
