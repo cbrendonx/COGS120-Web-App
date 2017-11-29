@@ -85,6 +85,7 @@ body, .jumbotron h1{
 
 #cartList{
 	list-style: none;
+	margin-left: 5%;
 }
 
 .bPoint{
@@ -194,18 +195,23 @@ body, .jumbotron h1{
 	margin-top: 1em;
 }
 
-@media screen and (min-height: 700px) {
-	
-	.blackFade{
-		height: 110%;
-	}
-}
-
 @media screen and (min-width: 992px) {
 	
 	.btn-primary{
 		margin-right: 5%;
 		padding: 0.5em 2.5%;
+	}
+	
+	.changeQuant{
+		width: 10%;
+		margin-left: 15%;
+	}
+}
+
+@media screen and (min-height: 700px) {
+	
+	.blackFade{
+		height: 110%;
 	}
 }
 
@@ -222,6 +228,11 @@ body, .jumbotron h1{
 	.jumbotron h1{
 		height: 1.25em;
 		font-size: 3.25em;
+	}
+	
+	.changeQuant{
+		margin-left: -5%;
+		
 	}
 }
 
@@ -240,6 +251,11 @@ body, .jumbotron h1{
 	
 	.blackFade{
 		height: 105%;
+	}
+	
+	.changeQuant{
+		margin-left: -5%;
+		margin-right: 2.5%;
 	}
 }
 
