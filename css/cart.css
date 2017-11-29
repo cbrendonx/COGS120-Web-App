@@ -8,7 +8,7 @@ body{
 	background-size: 400%;
 	background-position: 70% 20%;
 	width: 100%;
-	height: 105%;
+	height: 110%;
 	-webkit-overflow-scrolling: touch;
 	overflow-x: hidden;
 	overflow-y: scroll;
@@ -95,8 +95,9 @@ body, .jumbotron h1{
 }
 
 #cartList{
+	width: 100%;
+	padding: 0em 0em;
 	list-style: none;
-	margin-left: 5%;
 }
 
 .bPoint{
@@ -111,9 +112,10 @@ body, .jumbotron h1{
 }
 
 .changeQuant{
-	width: 25%;
+	width: 20%;
 	height: 10%;
-	margin: 0% 5% 5% -15%;
+	min-width: 20%;
+	margin: 0% 5% 5% 0%;
 	padding: 0.25em 0.25em;
 	font-size: 1.85em;
 	text-align: center;
@@ -125,8 +127,9 @@ body, .jumbotron h1{
 }
 
 .listItem{
-	width: 85%;
+	width: 82.5%;
 	height: auto;
+	margin-right: 5%;
 	font-size: 2.5em;
 	overflow-wrap: break-word;
 }
@@ -208,6 +211,7 @@ body, .jumbotron h1{
 	background-color: rgba(0, 0, 0, 0.5);
 	border-width: 1px;
 	border-radius: 0.5em;
+	margin-bottom: 1em;
 	padding: 1.5em;
 	height: 100%;
 	text-align: center;
