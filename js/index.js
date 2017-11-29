@@ -27,6 +27,43 @@ $(document).ready(function() {
 		localStorage.removeItem("loggedIn");
 		window.location = "login.html"
 	});
+
+	$("#startShopping").click(function() {
+
+		console.log("Start shopping button clicked...");
+
+		var firstTime = localStorage.getItem("firstTime");
+
+		if (firstTime === "1") {
+
+			// Set firstTime to "0"
+			localStorage.setItem("firstTime", "0");
+
+			console.log("Sent event to Google Analytics");
+
+			// Tracker code follows.
+			// tracker = ga.getAll()[0];
+			// tracker.send('event', 'startShopping', 'click');
+		}
+		else {
+			console.log("Nothing was sent to Google Analytics though")
+		}
+	});
+
+	// If it's the user's frst time
+	var ft = JSON.parse(localStorage.getItem("firstTime"))
+
+	if (ft === null) {
+		console.log("First time accessing the page");
+		localStorage.setItem("firstTime", "1");
+	}
+	else {
+		console.log("Not first time accessing the page");
+		localStorage.setItem("firstTime", "0");
+
+		// For testing purposes, uncomment this to clear "firstTime" from localStorage or just enter it in the console
+		localStorage.removeItem("firstTime");
+	}
 });
 
 // Helper function that retrieves the cart from localStorage.
