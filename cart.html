@@ -25,18 +25,33 @@
 </head>
 
 <body>
-	<div class="blackFade"></div>
+<div class="blackFade"></div>
 	<div class="container">
-		<div class="buttonGroup">
-			<!-- <button type="button" class="btn btn-primary">View My Fridge</button> -->
-			<!-- <a href="cart.html"><button class="btn btn-primary" id="viewCart">View Cart</button></a> -->
+		<div class="row section-full">
+			<div class="buttonGroup">
+				<div class="col-xs-4 full">
+					<a href="cart.html"><button class="btn btn-primary disabled">Cart</button></a>
+				</div>
+				<div class="col-xs-4 full">
+					<!-- <a href="fridge2.html"> -->
+						<button class="btn btn-primary">Fridge</button>
+					<!-- </a> -->
+				</div>
+				<div class="col-xs-4 full">
+					<a href="both.html"><button class="btn btn-primary">Both</button></a>
+				</div>
+			</div>
+		</div>
+		<!--<div class="buttonGroup">
+			
 			<a href="fridge2.html"><button class="btn btn-primary">View Fridge</button></a>
 			<a href="both.html"><button class="btn btn-primary">View Both</button></a>
-		</div>
+		</div>-->
+		<!-- <button type="button" class="btn btn-primary">View My Fridge</button> -->
+		<!-- <a href="cart.html"><button class="btn btn-primary" id="viewCart">View Cart</button></a> -->
 
 		<div class="jumbotron">	
 			<h1>Cart</h1>
-			<button class="btn btn-primary" id="scanItem">Scan Item to Cart</button>
 		</div>
 
 		<ul id="cartList">
@@ -45,43 +60,51 @@
 		<div class="emptySpace"></div>
 		
 		<div class="section">
-		<div class="row">
-			<div class="col-xs-8">
-				<div>
-					<label>Item Name</label>
-					<input type="text" class="form-control" placeholder="What's the item?" id="fridgeItemToAdd"></input>
+			<div class="row">
+				<div class="col-xs-8">
+					<div>
+						<label>Item Name</label>
+						<input type="text" class="form-control" placeholder="What's the item?" id="fridgeItemToAdd">
+					</div>
 				</div>
-			</div>
 
-			<div class="col-xs-4">
-				<div>
-					<label>Quantity</label>
-					<input type="text" class="form-control" id="fridgeAddNum" placeholder="123" onkeypress="return event.charCode >= 48 && event.charCode <= 57"></input>
+				<div class="col-xs-4">
+					<div>
+						<label>Quantity</label>
+						<input type="text" class="form-control" id="fridgeAddNum" placeholder="123" onkeypress="return event.charCode >= 48 && event.charCode <= 57">
+					</div>
 				</div>
 			</div>
-		</div>
 		  
-	    <div class="emptySpace"></div>
-		
-		<div class="buttonGroup3">
-			
-			<!-- Edit button HTML is still here, just in case. -->
-			<!-- <div>
-				<a href="cartedit1.html">
-					<button class="btn btn-default">edit</button>
-				</a>
-			</div> -->
-			
-			<button class="btn btn-default" id="cartAdd">Add Item</button>
+	    	<div class="emptySpace"></div>
+		<div class="row">
+			<div class="buttonGroup3">
 
-			<div>
-				<a href="family3.html"><button class="btn btn-default">View Family</button></a>
-			</div>
+				<!-- Edit button HTML is still here, just in case. -->
+				<!-- <div>
+					<a href="cartedit1.html">
+						<button class="btn btn-default">edit</button>
+					</a>
+				</div> -->
+				
+				<div class="col-sm-12">
+					<a href="family3.html"><button class="btn btn-default" id = "cartAdd">Add Item</button></a>
+				</div>
 
-			<div>
-				<a href="index.html"><button class="btn btn-default" id="done">Done Shopping</button></a>
+				<label id = "options">More Options</label>
+				<div class="col-sm-12">
+					<a href="scan.html"><button class="btn btn-default">Scan to Cart</button></a>
+				</div>
+
+				<div class="col-sm-12">
+					<a href="family3.html"><button class="btn btn-default">View Family</button></a>
+				</div>
+
+				<div class="col-sm-12">
+					<a href="index.html"><button class="btn btn-default" id="done">Done Shopping</button></a>
+				</div>
 			</div>
-		</div>
+			</div>
 		</div>
 		
 		
