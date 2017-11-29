@@ -16,12 +16,17 @@ p {
 
 .jumbotron {
 	text-align: center;
-	background-color: rgba(240, 240, 240, 0.75);
+	border: solid;
+	border-color: rgba(255, 255, 255, 0.5);
+	background-color: rgba(0, 0, 0, 0.5);
+	border-width: 0.15em;
+	border-radius: 10px;
 }
 
 .jumbotron h1 {
 	font-family: 'Montserrat', sans-serif;
 	letter-spacing: 0.05em;
+	color: white;
 }
 
 .full {
@@ -43,12 +48,16 @@ p {
 
 .section {
 	border: solid;
-	border-color: white;
-	background-color: rgba(255, 255, 255, 0.75);
-	border-width: 1px;
+	border-color: rgba(255, 255, 255, 0.5);
+	background-color: rgba(0, 0, 0, 0.5);
+	border-width: 0.25em;
 	border-radius: 10px;
 	padding: 20px;
 	margin: 10px;
+}
+
+.section label {
+	color: white;
 }
 
 .section-list {
