@@ -20,6 +20,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link href="css/bootstrap.min.css" rel="stylesheet">
 	<link href="css/bootstrap-theme.min.css" rel="stylesheet">
+	<link href="css/fridge2.css" rel="stylesheet">
 </head>
 
 <body>
@@ -28,47 +29,46 @@
 			<h1>Fridge</h1>
 		</div>
 
-		<!-- Disabled edit button.
-		<div>
-			<a href="fridgeEdit1.html"><button class="btn btn-default">Edit</button></a>
+		<div class="section" id="fridgeList">
 		</div>
-		-->
 
-		<ul id="fridgeList">
-		</ul>
+		<div class="section">
+		<div class="row">
+			<div class="col-xs-8">
+				<div class="descript" id="descriptGroup">
+					<label>Item Name</label>
+					<input type="text" class="form-control" placeholder="What's the item?" id="fridgeItemToAdd"></input>
+				</div>
+			</div>
 
-		<!-- <div class="emptySpace"></div>
-		-->
-
-		<div class="buttonGroup2">
-		  <div class="descript" id="descriptGroup">
-			<div class="inputName" id="itemName">Item Name</div>
-			<input type="text" class="form-control" placeholder="What's the item?" id="fridgeItemToAdd"></input>
-		  </div>
-		  
-		  <div class="descript" id="quantGroup">
-			<div class="inputName" id="quantity">Quantity:&nbsp;&nbsp;</div>
-			<input type="text" class="form-control" id="fridgeAddNum" placeholder="How many?" onkeypress="return event.charCode >= 48 && event.charCode <= 57"></input>
-		  </div>
+			<div class="col-xs-4">
+				<div class="descript" id="quantGroup">
+					<label>Quantity</label>
+					<input type="text" class="form-control" id="fridgeAddNum" placeholder="123" onkeypress="return event.charCode >= 48 && event.charCode <= 57"></input>
+				</div>
+			</div>
 		</div>
-		  
-	    <!-- <div class="emptySpace"></div>
-		-->
 
-	    <div>
-			<button class="btn btn-default" id="fridgeAdd">Add Item</button>
-		</div>
-		
-		<div>
-			<a href="index.html"><button class="btn btn-default">&larr; Back</button></a>
+
+		<div class="row">
+			<div class="fridge2btn-group">
+		    <div class="col-sm-12">
+				<button class="btn btn-default fridge2btn" id="fridgeAdd">Add Item</button>
+			</div>
+
+		    <div class="col-sm-12">
+				<a href="index.html"><button class="btn btn-default fridge2btn" id="done">Back</button></a>
+			</div>
+			</div>
 		</div>
 	</div>
 
 	<script src="https://code.jquery.com/jquery.js"></script>
-	<script src="js/bootstrap.min.js"></script>
 	<!-- <script src="js/fridge.js"></script> -->
 	<script src="js/fridgeEdit.js"></script>
 	<script src="js/common.js"></script>
+	<script src="js/done.js"></script>
+
 </body>
 
 </html>
