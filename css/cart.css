@@ -5,7 +5,7 @@ body{
     ), url("../images/shoppingCart.jpg");
 	background-attachment: fixed;
 	background-repeat: no-repeat;
-	background-size: 400%;
+	background-size: cover;
 	background-position: 70% 20%;
 	width: 100%;
 	height: 110%;
@@ -73,7 +73,6 @@ body, .jumbotron h1{
 	text-align: center;
 	margin: 1em 5% 2em 0em;
 	width: 100%;
-	height: 9em;
 	padding: 0.5em;
 	/*background-color: transparent;*/
 	background-color: rgba(0, 0, 0, 0.5);
@@ -161,11 +160,6 @@ body, .jumbotron h1{
 	font-size: 2em;
 }
 
-#itemName{
-	margin-top: 2em;
-	margin-bottom: 0.25em;
-}
-
 .form-control{
 	font-size: 1.25em;
 	padding: 1.25em 0.75em;
@@ -224,9 +218,42 @@ label{
 	font-size: 150%;
 }
 
-@media screen and (min-height: 768px) {
+@media screen and (max-width: 768px){
+		
+	.jumbotron h1{
+		font-size: 3em;
+	}
+}
+
+@media screen and (max-width: 450px) {
+	body{
+		background-size: cover;
+	}
+	
+	.container{
+		min-width: 115%;
+	}
+	
+	.btn-primary{
+		font-size: 1.5em;
+	}
+	
+	label{
+		font-size: 1.25em;
+	}
+	
+	#itemName{
+		margin-left: 5%;
+		width: 50%;
+	}
+	
+	.btn-default{
+		padding: 0.5em 0.5em;
+		font-size: 1.5em;
+	}
+	
 	.section{
-		height: 100%;
+		padding: 0.15em;
 	}
 }
 
