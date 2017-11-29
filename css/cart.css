@@ -186,11 +186,6 @@ body, .jumbotron h1{
 	float: center;
 }
 
-#cartAddNum{
-	width: 25%;
-	text-align: center;
-}
-
 
 .btn-default{
 	background-color: rgba(0,0,0,0.5);
