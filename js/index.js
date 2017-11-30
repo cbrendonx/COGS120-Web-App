@@ -30,7 +30,7 @@ $(document).ready(function() {
 
 	$("#startShopping").click(function() {
 
-		console.log("Start shopping button clicked...");
+		console.log("Start Shopping button clicked...");
 
 		var firstTime = localStorage.getItem("firstTime");
 
@@ -42,8 +42,8 @@ $(document).ready(function() {
 			console.log("Sent event to Google Analytics");
 
 			// Tracker code follows.
-			// tracker = ga.getAll()[0];
-			// tracker.send('event', 'startShopping', 'click');
+			tracker = ga.getAll()[0];
+			tracker.send('event', 'startShopping', 'click');
 		}
 		else {
 			console.log("Nothing was sent to Google Analytics though")
@@ -54,15 +54,20 @@ $(document).ready(function() {
 	var ft = JSON.parse(localStorage.getItem("firstTime"))
 
 	if (ft === null) {
+
+		// Set firstTime to "1" (true)
 		console.log("First time accessing the page");
 		localStorage.setItem("firstTime", "1");
 	}
+	
 	else {
+
+		// Set firstTime to "0" (false)
 		console.log("Not first time accessing the page");
 		localStorage.setItem("firstTime", "0");
 
 		// For testing purposes, uncomment this to clear "firstTime" from localStorage or just enter it in the console
-		localStorage.removeItem("firstTime");
+		// localStorage.removeItem("firstTime");
 	}
 });
 
