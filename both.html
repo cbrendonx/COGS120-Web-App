@@ -20,46 +20,60 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link href="css/bootstrap.min.css" rel="stylesheet">
 	<link href="css/bootstrap-theme.min.css" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:700" rel="stylesheet">
+	<link href="css/both.css" rel="stylesheet">
 </head>
 
 <body>
 	<div class="container">
-		<div>
-			<a href="cart.html"><button class="btn btn-primary">Cart</button></a>
-			<a href="fridge2.html"><button class="btn btn-primary">Fridge</button></a>
-			<a href="both.html"><button class="btn btn-primary">Both</button></a>
+		<div class="row section-full">
+		<div class="buttonGroup">
+			<a href="cart.html"><div class="col-xs-4 full">
+				<button class="btn btn-primary">Cart</button>
+			</div></a>
+			<div class="col-xs-4 full">
+				<a href="fridge2.html">
+					<button class="btn btn-primary">Fridge</button>
+				</a>
+			</div>
+			<div class="col-xs-4 full">
+				<button class="btn btn-primary disabled">Both</button>
+			</div>
 		</div>
+	</div>
 
-		<div class="jumbotron">
-			<h1>Cart</h1>
-		</div>
+	<div class="jumbotron">
+		<h1>Cart</h1>
+	</div>
 
-		<!-- Disabled edit button.
-		<div>
-			<a href="cartEdit2.html"><button class="btn btn-default">Edit</button></a>
-		</div>
-		-->
+	<!-- Disabled edit button.
+	<div>
+		<a href="cartEdit2.html"><button class="btn btn-default">Edit</button></a>
+	</div>
+	-->
 
-		<ul id="cartList">
-		</ul>
+	<ul id="cartList">
+	</ul>
 
-		<div class="emptySpace"></div>
-		
+	<div class="emptySpace"></div>
+
+	<div class="section">
 		<div class="buttonGroup2">
 		  <div class="descript" id="descriptGroup">
 			<div class="inputName" id="itemName">Item Name</div>
-			<input type="text" class="form-control" placeholder="What's the item?" id="cartItemToAdd"></input>
+			<input type="text" class="form-control" placeholder="Veggies" id="cartItemToAdd">
 		  </div>
-		  
+
 		  <div class="descript" id="quantGroup">
 			<div class="inputName" id="quantity">Quantity:&nbsp;&nbsp;</div>
-			<input type="text" class="form-control" id="cartAddNum" placeholder="How many?" onkeypress="return event.charCode >= 48 && event.charCode <= 57"></input>
+			<input type="text" class="form-control" id="cartAddNum" placeholder="123" onkeypress="return event.charCode >= 48 && event.charCode <= 57">
 		  </div>
 		</div>
 
 		<div>
 			<button class="btn btn-default" id="cartAdd">Add Item</button>
 		</div>
+	</div>
 		  
 	    <div class="emptySpace"></div>
 
@@ -80,15 +94,16 @@
 
 		<div class="emptySpace"></div>
 		
+		<div class="section">
 		<div class="buttonGroup2">
-		  <div class="descript" id="descriptGroup">
-			<div class="inputName" id="itemName">Item Name</div>
-			<input type="text" class="form-control" placeholder="What's the item?" id="fridgeItemToAdd"></input>
+		  <div class="descript" id="descriptGroup1">
+			<div class="inputName" id="itemName1">Item Name</div>
+			<input type="text" class="form-control" placeholder="Veggies" id="fridgeItemToAdd">
 		  </div>
 		  
-		  <div class="descript" id="quantGroup">
-			<div class="inputName" id="quantity">Quantity:&nbsp;&nbsp;</div>
-			<input type="text" class="form-control" id="fridgeAddNum" placeholder="How many?" onkeypress="return event.charCode >= 48 && event.charCode <= 57"></input>
+		  <div class="descript" id="quantGroup1">
+			<div class="inputName" id="quantity1">Quantity:&nbsp;&nbsp;</div>
+			<input type="text" class="form-control" id="fridgeAddNum" placeholder="123" onkeypress="return event.charCode >= 48 && event.charCode <= 57">
 		  </div>
 		</div>
 		  
@@ -96,6 +111,7 @@
 
 	    <div>
 			<button class="btn btn-default" id="fridgeAdd">Add Item</button>
+		</div>
 		</div>
 
 		<div>

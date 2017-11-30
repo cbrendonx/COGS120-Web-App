@@ -29,76 +29,74 @@
 	<div class="container">
 
 		<div class="row section-full">
-			<div class="fridgebtn-group">
-				<div class="col-xs-4 full">
-					<a href="cart.html"><button class="btn btn-primary">Cart</button></a>
-				</div>
-				<div class="col-xs-4 full">
-					<!-- <a href="fridge2.html"> -->
-						<button class="btn btn-primary disabled">Fridge</button>
-					<!-- </a> -->
-				</div>
-				<div class="col-xs-4 full">
-					<a href="both.html"><button class="btn btn-primary">Both</button></a>
-				</div>
+		<div class="buttonGroup">
+			<div class="col-xs-4 full">
+				<a href="cart.html">	<button class="btn btn-primary ">Cart</button></a>
 			</div>
-		</div>
-
-		<div class="jumbotron">
-			<h1>Fridge</h1>
-		</div>
-
-		<!-- Disabled Edit Button.
-		<div>
-			<a href="fridgeEdit2.html"><button class="btn btn-default">Edit</button></a>
-		</div>
-		-->
-
-		<div class="section-list" id="fridgeList">
-			<!--
-			<ul class="list-unstyled" id="fridgeList">
-			</ul>
-			-->
-		</div>
-
-	
-		<div class="section">
-		<div class="row">
-			<div class="col-xs-8">
-				<div class="descript" id="descriptGroup">
-					<label>Item Name</label>
-					<input type="text" class="form-control" placeholder="Veggies" id="fridgeItemToAdd"></input>
-				</div>
+			<div class="col-xs-4 full">
+				<button class="btn btn-primary disabled">Fridge</button>
 			</div>
-
-			<div class="col-xs-4">
-				<div class="descript" id="quantGroup">
-					<label>Quantity</label>
-					<input type="text" class="form-control" id="fridgeAddNum" placeholder="123" onkeypress="return event.charCode >= 48 && event.charCode <= 57"></input>
-				</div>
-			</div>
-		</div>
-
-
-		<div class="row">
-			<div class="fridgebtn-group">
-		    <div class="col-sm-12">
-				<button class="btn btn-default fridgebtn" id="fridgeAdd">Add Item</button>
-			</div>
-
-		    <div class="col-sm-12">
-				<a href="index.html"><button class="btn btn-default fridgebtn" id="done">Done Shopping</button></a>
-			</div>
+			<div class="col-xs-4 full">
+				<a href="both.html"><button class="btn btn-primary">Both</button></a>
 			</div>
 		</div>
 	</div>
 
-	<script src="https://code.jquery.com/jquery.js"></script>
+	<div class="jumbotron">
+		<h1>Fridge</h1>
+	</div>
+
+	<!-- Disabled Edit Button.
+	<div>
+		<a href="fridgeEdit2.html"><button class="btn btn-default">Edit</button></a>
+	</div>
+	-->
+
+	<div class="section-list" id="fridgeList">
+		<!--
+		<ul class="list-unstyled" id="fridgeList">
+		</ul>
+		-->
+	</div>
+
+
+	<div class="section">
+	<div class="row">
+		<div class="col-xs-8">
+			<div class="descript" id="descriptGroup">
+				<label>Item Name</label>
+				<input type="text" class="form-control" placeholder="Veggies" id="fridgeItemToAdd"></input>
+			</div>
+		</div>
+
+		<div class="col-xs-4">
+			<div class="descript" id="quantGroup">
+				<label>Quantity</label>
+				<input type="text" class="form-control" id="fridgeAddNum" placeholder="123" onkeypress="return event.charCode >= 48 && event.charCode <= 57"></input>
+			</div>
+		</div>
+	</div>
+
+
+	<div class="row">
+		<div class="fridgebtn-group">
+		<div class="col-sm-12">
+			<button class="btn btn-default fridgebtn" id="fridgeAdd">Add Item</button>
+		</div>
+
+		<div class="col-sm-12">
+			<a href="index.html"><button class="btn btn-default fridgebtn" id="done">Done Shopping</button></a>
+		</div>
+		</div>
+	</div>
+</div>
+</body>
+
+<script src="https://code.jquery.com/jquery.js"></script>
 	<script src="js/bootstrap.min.js"></script>
 	<!-- <script src="js/fridge.js"></script> -->
 	<script src="js/fridgeEdit.js"></script>
 	<script src="js/common.js"></script>
 	<script src="js/done.js"></script>
-</body>
 
 </html>
