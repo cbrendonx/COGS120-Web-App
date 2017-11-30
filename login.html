@@ -16,6 +16,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link href="css/bootstrap.min.css" rel="stylesheet">
 	<link href="css/bootstrap-theme.min.css" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:700" rel="stylesheet">
 	<link href="css/login.css" rel="stylesheet">
 </head>
 
@@ -27,12 +28,15 @@
 
 		else {
 			console.log("Logged in!");
-			window.location = "index.html"
+			/*window.location = "index.html"*/
 		}
 	</script>
-
+	
 	<div class="container">
-		<div class="row">
+		<div class = "row" id = "appName">
+			<div>C + F Lists</div>
+		</div>
+		<div class="row" id = "login">
 			<div class="col-sm-2"></div>
 			<div class="col-sm-8">
 				<p>If you are a new user, please enter your desired username, password, and then click "Log In" to create your account!</p>
