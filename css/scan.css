@@ -60,10 +60,3 @@ video{
 	width: 90%;
 	height: 100%;
 }
-
-.scanner-container {
-	display: block;
-	margin: auto;
-    width: 100px;
-	height: 100px;
-}
