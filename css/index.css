@@ -25,20 +25,32 @@ html {
 }
 */
 
-body {
+html { 
 	background: linear-gradient(
+		rgba(0, 0, 0, 0.55),
+		rgba(0, 0, 0, 0.55)
+	), url("../images/main-menu-pic.jpeg") no-repeat center center fixed; 
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+
+body {
+/*	background: linear-gradient(
       rgba(0, 0, 0, 0.55), 
       rgba(0, 0, 0, 0.55)
-    ), url(../images/main-menu-pic.jpeg);
+    ), url("../images/main-menu-pic.jpeg");
 	background-attachment: fixed;
 	background-size: cover;
 	background-repeat: no-repeat;
-	background-position: 70% 50%;
+	background-position: 70% 50%;*/
 	font-family: 'Montserrat', sans-serif;
-	position: absolute;
+/*	position: absolute;
 	width: 100%;
 	overflow-x: hidden;
-	overflow-y: hidden;
+	overflow-y: hidden;*/
+	background-color: transparent;
 }
 
 .jumbotron {

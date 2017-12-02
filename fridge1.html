@@ -37,35 +37,35 @@
 		</div>
 
 		<div class="section">
-		<div class="row">
-			<div class="col-xs-8">
-				<div class="descript" id="descriptGroup">
-					<label>Item Name</label>
-					<input type="text" class="form-control" placeholder="Veggies" id="fridgeItemToAdd"></input>
+			<div class="row">
+				<div class="col-xs-8">
+					<div class="descript" id="descriptGroup">
+						<label>Item Name</label>
+						<input type="text" class="form-control" placeholder="Veggies" id="fridgeItemToAdd"></input>
+					</div>
+				</div>
+
+				<div class="col-xs-4">
+					<div class="descript" id="quantGroup">
+						<label>Quantity</label>
+						<input type="text" class="form-control" id="fridgeAddNum" placeholder="123" onkeypress="return event.charCode >= 48 && event.charCode <= 57"></input>
+					</div>
 				</div>
 			</div>
 
-			<div class="col-xs-4">
-				<div class="descript" id="quantGroup">
-					<label>Quantity</label>
-					<input type="text" class="form-control" id="fridgeAddNum" placeholder="123" onkeypress="return event.charCode >= 48 && event.charCode <= 57"></input>
+
+			<div class="row">
+				<div class="fridgebtn-group">
+				    <div class="col-sm-12">
+						<button class="btn btn-default fridgebtn" id="fridgeAdd">Add Item</button>
+					</div>
+
+				    <div class="col-sm-12">
+						<a href="index.html"><button class="btn btn-default fridgebtn" id="done">Back</button></a>
+					</div>
 				</div>
 			</div>
 		</div>
-
-
-		<div class="row">
-			<div class="fridgebtn-group">
-		    <div class="col-sm-12">
-				<button class="btn btn-default fridgebtn" id="fridgeAdd">Add Item</button>
-			</div>
-
-		    <div class="col-sm-12">
-				<a href="index.html"><button class="btn btn-default fridgebtn" id="done">Back</button></a>
-			</div>
-			</div>
-		</div>
-	</div>
 
 	<script src="https://code.jquery.com/jquery.js"></script>
 	<script src="js/bootstrap.min.js"></script>
