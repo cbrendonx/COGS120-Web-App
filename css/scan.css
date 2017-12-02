@@ -35,8 +35,6 @@ canvas.drawing, canvas.drawingBuffer {
 	position: fixed;
 	left: 0;
 	top: 0;
-	width: 100%;
-	height: 100%;
 	float: center;
 	border-radius: 0.5em;
 }
@@ -61,4 +59,11 @@ video{
 	font-size: 2.5em;
 	width: 90%;
 	height: 100%;
+}
+
+.scanner-container {
+	display: block;
+	margin: auto;
+    width: 100px;
+	height: 100px;
 }
