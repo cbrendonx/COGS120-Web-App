@@ -3,7 +3,7 @@
 <script src="js/auth.js"></script>
 
 <html>
-
+	
 <head>
 	<!-- Global site tag (gtag.js) - Google Analytics -->
 	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-110388752-1"></script>
@@ -26,8 +26,8 @@
 
 <body>
 	<script id="list-template" type="text/x-handlebars-template">
-		<div id="person{{index}}" class="panel">
-			<div id="name{{index}}">
+		<div class="panel" id="person{{index}}">
+			<div class="nameCont" id="name{{index}}">
 				<h3 class="name">{{name}}</h3>
 			</div>
 
@@ -38,7 +38,7 @@
 
 			<div id="list{{index}}">
 
-				<div id="content{{index}}">
+				<div class = "content" id="content{{index}}">
 					{{#each entry}}
 					<p id="p{{@root.index}}{{@index}}" class="card"><button id="rm{{@root.index}}{{@index}}" class="remove-btn">&times</button> {{this}}</p>
 					{{/each}}
@@ -48,7 +48,7 @@
 					<button id="add{{index}}" class="btn btn-primary horizontal-btn">Add Entry</button>
 				</div>
 				<div>
-					<button id="cancel{{index}}" class="btn btn-primary horizontal-btn">Cancel</button>
+					<button id="cancel{{index}}" class="btn btn-primary cancel-btn">Cancel</button>
 				</div>
 
 				<div>
@@ -59,6 +59,7 @@
 	</script>
 
 	<div class="container">
+		
 		<div class="row">
 			<div class="col-sm-2"></div>
 			<div class="col-sm-8">
@@ -67,13 +68,13 @@
 					<h1>Family</h1>
 				</div>
 
-				<p class = "descript">Press on a name to expand an entry!</p>
+				<p id = "descript">Press on a name to expand an entry!</p>
 
-				<div id="family-list">
+			  <div id="family-list">
 				</div>
 
 				<div>
-					<input type="text" id="new-name" class="horizontal-input"></input>
+					<input type="text" id="new-name" class="horizontal-input" placeholder = "John"></input>
 					<button id="new-name-btn" class="btn btn-primary horizontal-btn">Add New Family Member</button>
 				</div>
 
@@ -85,6 +86,8 @@
 			</div>
 			<div class="col-sm-2"></div>
 		</div>
+		</div>
+	
 	</div>
 
 	<script src="https://code.jquery.com/jquery.js"></script>
