@@ -27,7 +27,7 @@ $(document).ready(function() {
 		}
 
 		else {
-			family.push({"name": name, "entry": [], "index": index})
+			family.push({"name": name, "entry": [], "index": index});
 			console.log(family);
 			displayList();
 
