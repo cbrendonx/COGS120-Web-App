@@ -167,10 +167,10 @@ label {
 		font-size: 1.25em;
 	}
 	
-/*	label{
-		margin-top: 0.5em;
-		font-size: 1.25em;
-	}*/
+	label{
+		/*margin-top: 0.5em;*/
+		font-size: 0.8em;
+	}
 	
 	#itemName{
 		margin-left: 5%;
