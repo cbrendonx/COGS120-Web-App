@@ -5,7 +5,7 @@ $(document).ready(function() {
 	$("#log-in").click(function() {
 		console.log("Retrieving user data");
 
-		// user database
+		// Attempts to retieve the userdb from localStorage.
 		var userdb = {}; 
 		var temp = localStorage.getItem("userdb");
 
@@ -16,11 +16,10 @@ $(document).ready(function() {
 			userdb = {};
 		}
 
+		// Retrieves the username and the password entered by the user.
 		var user = document.getElementById("username").value;
 		var pass = document.getElementById("password").value;
 
-		//var user = prompt("Who are you?");
-	
 		// Returns if user cancelled.
 		if(user == null && pass ==  null) {
 			return;
@@ -85,6 +84,7 @@ $(document).ready(function() {
 		localStorage.setItem("fridge", JSON.stringify(fridge));
 		localStorage.setItem("family", JSON.stringify(family));
 
+		// Sets a flag in localStorage and redirects the user to index.html.
 		console.log("Logging in")
 		localStorage.setItem("loggedIn", 0);
 		window.location = "index.html"
