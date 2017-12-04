@@ -63,6 +63,10 @@ body {
 	width: 100%;
 }
 
+.jumbotron h1,p {
+	font-family: 'Montserrat', sans-serif;
+}
+
 .row {
 	text-align: center;
 }
