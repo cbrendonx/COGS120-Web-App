@@ -1,3 +1,4 @@
+// The following are used when populating localStorage.
 var cart = [];
 
 var fridge = [
@@ -31,13 +32,14 @@ var userdb = {
 // Gets called when the document is ready.
 $(document).ready(function() {
 
-	// Assigns functionality to the localStorage.clear() button.
+	// Assigns functionality to the "[DEV] Clear" button.
 	$("#clr").click(function() {
 		localStorage.clear();
 		alert("localStorage cleared; reloading page now")
 		location.reload();
 	});
 
+	// Assigns functionality to the "[DEV] Populate" button.
 	$("#populate").click(function() {
 		localStorage.clear();
 
