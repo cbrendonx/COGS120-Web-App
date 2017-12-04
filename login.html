@@ -35,25 +35,28 @@
 	
 	<div class="container">
 
-		<div class = "row" id = "appName">
-			<div style="font-size: 0.75 em">ShopList+</div>
-		</div>
+		<div class="jumbotron"><h1 class="app-name">ShopList+</h1></div>
 
-		<div class="row" id = "login">
+		<div class="row">
 			<div class="col-sm-2"></div>
 			<div class="col-sm-8">
-				<p>If you are a new user, please enter your desired username, password, and then click "Log In" to create your account!</p>
+				<p class="login-p">If you are a new user, please enter your desired username, password, and then click "Log In" to create your account!</p>
 
-				<form id="form_id" method="post" name="myform">
-					<div>
-						<label>Username : </label>
-						<input type="text" class="form-control" name="username" id="username"/>
-					</div>
-					<div>
-						<label>Password : </label>
-						<input type="password" class="form-control" name="password" id="password"/>
-					</div>
-				</form>
+				<br>
+
+				<div>
+					<labe class="login-label">Username : </label>
+					<input type="text" class="form-control" name="username" id="username"/>
+				</div>
+
+				<br>
+
+				<div>
+					<label class="login-label">Password : </label>
+					<input type="password" class="form-control" name="password" id="password"/>
+				</div>
+
+				<br>
 
 				<button id="log-in" class="btn btn-primary login-btn">Log In</button>
 			</div>

@@ -1,39 +1,96 @@
-body{
+html { 
 	background: linear-gradient(
-      rgba(0, 0, 0, 0.55), 
-      rgba(0, 0, 0, 0.55)
-    ), url("../images/groceryShopping.gif");
-	background-attachment: fixed;
-	background-repeat: no-repeat;
+		rgba(0, 0, 0, 0.55),
+		rgba(0, 0, 0, 0.55)
+	), url("../images/groceryShopping.gif") no-repeat center center fixed; 
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
 	background-size: cover;
-	background-position: 70% 20%;
-	width: 100%;
-	height: auto;
-	-webkit-overflow-scrolling: touch;
-	overflow-x: hidden;
-	overflow-y: scroll;
-	color: white;
+}
+
+body{
 	font-family: 'Montserrat', sans-serif;
+	background-color: transparent;
 }
 
-.container{
-	width: 100%;
-	margin: 5% 0%;
-	font-size: 1.5em;
+.container {
+	color: white;
 }
 
-#appName{
-	margin: 10% 0% 5% 0%;
-	width: 100%;
+.jumbotron {
+	background-color: transparent;
 	text-align: center;
-	font-size: 3em;
 }
 
-#login{
-	width: 100%;
+.app-name {
+	font-family: 'Montserrat', sans-serif;
+	font-size: 2.5875em;
+}
+
+.login-p {
+	font-size: 1.29375em;
+}
+
+.login-label {
+	font-size: 1.6171875em;
 }
 
 .login-btn {
     width: 100%;
+	font-size: 1.29375em;
 }
 
+@media all and (max-width: 414px) {
+	.app-name {
+		font-size: 2.5875em;
+	}
+
+	.login-p {
+		font-size: 1.29375em;
+	}
+
+	.login-label {
+		font-size: 1.6171875em;
+	}
+
+	.login-btn {
+		font-size: 1.29375em;
+	}
+}
+
+@media all and (max-width: 375px) {
+	.app-name {
+		font-size: 2.34375em;
+	}
+
+	.login-p {
+		font-size: 1.171875em;
+	}
+
+	.login-label {
+		font-size: 1.46484375em;
+	}
+
+	.login-btn {
+		font-size: 1.171875em;
+	}
+}
+
+@media all and (max-width: 320px) {
+	.app-name {
+		font-size: 2em;
+	}
+
+	.login-p {
+		font-size: 1em;
+	}
+
+	.login-label {
+		font-size: 1.25em;
+	}
+
+	.login-btn {
+		font-size: 1em;
+	}
+}
