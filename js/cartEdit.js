@@ -9,11 +9,6 @@ $(document).ready(function() {
 
 	// Assigns functionality to the add button.
 	$("#cartAdd").click(addItemToCart);
-
-	// Assigns functionality to the save button.
-	// $("#save").click(function() {
-	// 	localStorage.setItem("cart", JSON.stringify(cart));
-	// });
 });
 
 // Helper function that adds an item to the cart.
@@ -64,12 +59,6 @@ function addItemToCart() {
 		// Appends the new item to the list.
 		var i = cart.length - 1;
 
-		// OLD: Uncomment if reverting back to the increment-decrement functionality.
-		// cartList.append("<li id=cartItem" + i + "><button class='btn btn-default' id='inc" + i + "'>+</button><button class='btn btn-default' id='dec" + i + "'>-</button> 1 " + toAdd + "</li>");
-		// $("#inc" + i).click(incCartQty);
-		// $("#dec" + i).click(decCartQty);
-
-		// cartList.append("<li id=cartItem" + i + "><input class='form-control' type='text' id='cartQty" + i + "' onkeypress='return event.charCode >= 48 && event.charCode <= 57'></input><p>" + toAdd + "</p></li>");
 		cartList.append("<div class='row item' id='cartItem" + i + "'><div class='col-xs-4'><input class='changeQuant' type='text' id='cartQty" + i + "' onkeypress='return event.charCode >= 48 && event.charCode <= 57'></input></div><div class='col-xs-8'><p>" + toAdd + "</p></div></div>");
 		$("#cartQty" + i).val(qty);
 		$("#cartQty" + i).keypress(updateCartQty);
@@ -80,15 +69,9 @@ function addItemToCart() {
 
 		var i = indexInArray(toAdd, cart);
 
-		// OLD: Uncomment if reverting back to the increment-decrement functionality.
-		// var qty = ++cart[indexInArray(toAdd, cart)][0];
-		// $("#cartItem" + i).html("<button class='btn btn-default' id='inc" + i + "'>+</button><button class='btn btn-default' id='dec" + i + "'>-</button> " + cartQty + " " + toAdd);
-		// $("#inc" + i).click(incCartQty);
-		// $("#dec" + i).click(decCartQty);
-
 		qty = qty + cart[indexInArray(toAdd, cart)][0];
 		cart[indexInArray(toAdd, cart)][0] = qty;
-		// $("#cartItem" + i).html("<input class='form-control' type='text' id='cartQty" + i + "' onkeypress='return event.charCode >= 48 && event.charCode <= 57'></input><p>" + toAdd + "</p>");
+
 		$("#cartItem" + i).html("<div class='col-xs-4'><input class='changeQuant' type='text' id='cartQty" + i + "' onkeypress='return event.charCode >= 48 && event.charCode <= 57'></input></div><div class='col-xs-8'><p>" + toAdd + "</p></div>");
 		$("#cartQty" + i).val(qty);
 		$("#cartQty" + i).keypress(updateCartQty);
@@ -129,46 +112,11 @@ function displayCart() {
 		var qty = cart[i][0];
 		var item = cart[i][1];
 
-		// OLD: Uncomment if reverting back to the increment-decrement functionality.
-		// cartList.append("<li id=cartItem" + i + "><button class='btn btn-default' id='inc" + i + "'>+</button><button class='btn btn-default' id='dec" + i + "'>-</button> " + cartQty + " " + item + "</li>");
-		// $("#inc" + i).click(incCartQty);
-		// $("#dec" + i).click(decCartQty);
-
 		cartList.append("<div class='row item' id='cartItem" + i + "'><div class='col-xs-4'><input class='changeQuant' type='text' id='cartQty" + i + "' onkeypress='return event.charCode >= 48 && event.charCode <= 57'></input></div><div class='col-xs-8'><p>" + item + "</p></div></div>");
 		$("#cartQty" + i).val(qty);
 		$("#cartQty" + i).keypress(updateCartQty);
 	}	
 }
-
-// Event handler that decreases the quantity of an item.
-// function decCartQty() {
-// 	console.log("Decreasing quantity");
-// 	console.log(this);
-
-// 	var id = this.getAttribute("id");
-// 	var index = id.substr("inc".length);
-// 	var count = --cart[index][0];
-
-// 	// Removes the item from the list when the quantity is 0 or less.
-// 	if (count <= 0) {
-// 		cart.splice(index, 1)
-// 		console.log($(this).parent().remove());
-// 	}
-
-// 	displayCart();
-// }
-
-// Event handler that increases the quantity of an item.
-// function incCartQty() {
-// 	console.log("Increasing quantity");
-// 	console.log(this);
-
-// 	var id = this.getAttribute("id");
-// 	var index = id.substr("dec".length);
-// 	cart[index][0]++;
-
-// 	displayCart();
-// }
 
 // Event handler that updates the quantity of an item.
 function updateCartQty() {
@@ -200,22 +148,3 @@ function updateCartQty() {
 	 	localStorage.setItem("cart", JSON.stringify(cart));
 	}
 }
-
-// These helper functions are now found in common.js.
-// function inArray(item, arr) {
-// 	for (var i = 0; i < arr.length; i++) {
-// 		if (arr[i][1] === item) {
-// 			return true;
-// 		}
-// 	}
-// 	return false;
-// }
-
-// function indexInArray(item, arr) {
-// 	for (var i = 0; i< arr.length; i++) {
-// 		if (arr[i][1] === item) {
-// 			return i;
-// 		}
-// 	}
-// 	return -1;
-// }

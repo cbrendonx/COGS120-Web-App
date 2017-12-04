@@ -46,8 +46,6 @@ function cartToFridge() {
 			}
 		}
 
-		// fridge = fridge.concat(cart);
-
 		// Saves everything back out to localStorage.
 		localStorage.setItem("cart", JSON.stringify([]));
 		localStorage.setItem("fridge", JSON.stringify(fridge));
@@ -57,22 +55,3 @@ function cartToFridge() {
 		console.log("There are no items in the cart");
 	}
 }
-
-// These helper functions are now found in common.js.
-// function inArray(item, arr) {
-// 	for (var i = 0; i < arr.length; i++) {
-// 		if (arr[i][1] === item) {
-// 			return true;
-// 		}
-// 	}
-// 	return false;
-// }
-
-// function indexInArray(item, arr) {
-// 	for (var i = 0; i< arr.length; i++) {
-// 		if (arr[i][1] === item) {
-// 			return i;
-// 		}
-// 	}
-// 	return -1;
-// }

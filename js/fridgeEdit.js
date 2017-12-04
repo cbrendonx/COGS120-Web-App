@@ -9,11 +9,6 @@ $(document).ready(function() {
 
 	// Assigns functionality to the add button.
 	$("#fridgeAdd").click(addItemToFridge);
-
-	// Assigns functionality to the save button.
-	// $("#save").click(function() {
-	// 	localStorage.setItem("fridge", JSON.stringify(fridge));
-	// });
 });
 
 // Helper function that adds an item to the fridge.
@@ -64,12 +59,6 @@ function addItemToFridge() {
 		// Appends the new item to the list.
 		var i = fridge.length - 1;
 
-		// OLD: Uncomment if reverting back to the increment-decrement functionality.
-		// fridgeList.append("<li id=fridgeItem" + i + "><button class='btn btn-default' id='inc" + i + "'>+</button><button class='btn btn-default' id='dec" + i + "'>-</button> 1 " + toAdd + "</li>");
-		// $("#inc" + i).click(incFridgeQty);
-		// $("#dec" + i).click(decFridgeQty);
-
-		// fridgeList.append("<li id=fridgeItem" + i + "><input class='form-control' type='text' id='fridgeQty" + i + "' onkeypress='return event.charCode >= 48 && event.charCode <= 57'></input><p>" + toAdd + "</p></li>");
 		fridgeList.append("<div class='row item' id='fridgeItem" + i + "'><div class='col-xs-4'><input class='changeQuant' type='text' id='fridgeQty" + i + "' onkeypress='return event.charCode >= 48 && event.charCode <= 57'></input></div><div class='col-xs-8'><p>" + toAdd + "</p></div></div>");
 		$("#fridgeQty" + i).val(qty);
 		$("#fridgeQty" + i).keypress(updateFridgeQty);
@@ -80,15 +69,9 @@ function addItemToFridge() {
 
 		var i = indexInArray(toAdd, fridge);
 
-		// OLD: Uncomment if reverting back to the increment-decrement functionality.
-		// var qty = ++fridge[indexInArray(toAdd, fridge)][0];
-		// $("#fridgeItem" + i).html("<button class='btn btn-default' id='inc" + i + "'>+</button><button class='btn btn-default' id='dec" + i + "'>-</button> " + fridgeQty + " " + toAdd);
-		// $("#inc" + i).click(incFridgeQty);
-		// $("#dec" + i).click(decFridgeQty);
-
 		qty = qty + fridge[indexInArray(toAdd, fridge)][0];
 		fridge[indexInArray(toAdd, fridge)][0] = qty;
-		// $("#fridgeItem" + i).html("<input class='form-control' type='text' id='fridgeQty" + i + "' onkeypress='return event.charCode >= 48 && event.charCode <= 57'></input><p>" + toAdd + "</p>");
+
 		$("#fridgeItem" + i).html("<div class='col-xs-4'><input class='changeQuant' type='text' id='fridgeQty" + i + "' onkeypress='return event.charCode >= 48 && event.charCode <= 57'></input></div><div class='col-xs-8'><p>" + toAdd + "</p></div>");
 		$("#fridgeQty" + i).val(qty);
 		$("#fridgeQty" + i).keypress(updateFridgeQty);
@@ -129,46 +112,11 @@ function displayFridge() {
 		var qty = fridge[i][0];
 		var item = fridge[i][1];
 
-		// OLD: Uncomment if reverting back to the increment-decrement functionality.
-		// fridgeList.append("<li id=fridgeItem" + i + "><button class='btn btn-default' id='inc" + i + "'>+</button><button class='btn btn-default' id='dec" + i + "'>-</button> " + fridgeQty + " " + item + "</li>");
-		// $("#inc" + i).click(incFridgeQty);
-		// $("#dec" + i).click(decFridgeQty);
-
 		fridgeList.append("<div class='row item' id='fridgeItem" + i + "'><div class='col-xs-4'><input class='changeQuant' type='text' id='fridgeQty" + i + "' onkeypress='return event.charCode >= 48 && event.charCode <= 57'></input></div><div class='col-xs-8'><p>" + item + "</p></div></div>");
 		$("#fridgeQty" + i).val(qty);
 		$("#fridgeQty" + i).keypress(updateFridgeQty);
 	}	
 }
-
-// Event handler that decreases the quantity of an item.
-// function decFridgeQty() {
-// 	console.log("Decreasing quantity");
-// 	console.log(this);
-
-// 	var id = this.getAttribute("id");
-// 	var index = id.substr("inc".length);
-// 	var count = --fridge[index][0];
-
-// 	// Removes the item from the list when the quantity is 0 or less.
-// 	if (count <= 0) {
-// 		fridge.splice(index, 1)
-// 		console.log($(this).parent().remove());
-// 	}
-
-// 	displayFridge();
-// }
-
-// Event handler that increases the quantity of an item.
-// function incFridgeQty() {
-// 	console.log("Increasing quantity");
-// 	console.log(this);
-
-// 	var id = this.getAttribute("id");
-// 	var index = id.substr("dec".length);
-// 	fridge[index][0]++;
-
-// 	displayFridge();
-// }
 
 // Event handler that updates the quantity of an item.
 function updateFridgeQty() {
@@ -200,22 +148,3 @@ function updateFridgeQty() {
 	 	localStorage.setItem("fridge", JSON.stringify(fridge));
 	}
 }
-
-// These helper functions are now found in common.js.
-// function inArray(item, arr) {
-// 	for (var i = 0; i < arr.length; i++) {
-// 		if (arr[i][1] === item) {
-// 			return true;
-// 		}
-// 	}
-// 	return false;
-// }
-
-// function indexInArray(item, arr) {
-// 	for (var i = 0; i< arr.length; i++) {
-// 		if (arr[i][1] === item) {
-// 			return i;
-// 		}
-// 	}
-// 	return -1;
-// }
